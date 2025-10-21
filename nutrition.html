@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitapp - Ma Passion Musculation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Ton CSS personnalisé -->
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-custom" href="index.html">
+                <i class="bi bi-heart-pulse me-2"></i>FitAPP
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                class="bi bi-house-door-fill me-1"></i>Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="seance.html"><i
+                                class="bi bi-heart-fill me-1"></i>Séances</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="programmes.html"><i
+                                class="bi bi-activity me-1"></i>Programmes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nutrition.html"><i
+                                class="bi bi-apple me-1"></i>Nutrition</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="galerie.html"><i
+                                class="bi bi-images me-1"></i>Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link " href="contact.html"><i class="bi bi-award me-1"></i>Mes
+                            PR</a></li>
+                </ul>
+                <div class="ms-auto d-flex">
+                    <a href="CV_FR.html" class="btn btn-outline-light btn-sm me-2">cv</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1><i class="bi bi-apple me-3"></i>Guide Nutritionnel Économique</h1>
+            <p>Découvrez les valeurs nutritionnelles des aliments accessibles et nutritifs pour votre progression</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="container mb-5">
+        <!-- Protéines -->
+        <div class="mb-5">
+            <h2 class="text-center mb-4">
+                <i class="bi bi-egg-fried me-2"></i>Protéines
+            </h2>
+            <div class="row g-4">
+                <!-- Œufs -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/oeufs.png" alt="Œufs"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Œufs</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>143</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>12.6g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>9.5g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.7g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poulet (blanc) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/poulet.png" alt="Poulet (blanc)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Poulet (blanc)
+                                </h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>165</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>31g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>3.6g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dinde (blanc) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/dinde.png" alt="Dinde (blanc)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Dinde (blanc)
+                                </h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>135</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>29g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>1.7g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lait (entier) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/lait.png" alt="Lait (entier)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Lait (entier)
+                                </h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>61</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>3.4g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>3.3g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>4.8g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fromage blanc (0% MG) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/fromage-blanc.png" alt="Fromage blanc (0% MG)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Fromage blanc
+                                    (0% MG)</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>55</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>7g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.2g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>4g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glucides -->
+        <div class="mb-5">
+            <h2 class="text-center mb-4">
+                <i class="bi bi-basket3 me-2"></i>Glucides
+            </h2>
+            <div class="row g-4">
+                <!-- Flocons d'avoine -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/avoine.png" alt="Flocons d'avoine"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Flocons d'avoine
+                                </h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>389</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>16.9g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>6.9g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>66.3g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pâtes (cuites) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/pates.png" alt="Pâtes (cuites)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Pâtes (cuites)
+                                </h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>131</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>4.3g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.5g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>28g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Riz (cuit) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/riz.png" alt="Riz (cuit)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Riz (cuit)</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>130</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>2.7g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.3g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>28g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pomme de terre (cuite) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/patate.png" alt="Pomme de terre (cuite)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Pomme de terre
+                                    (cuite)</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>77</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>2g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.1g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>17g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pain de mie complet -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/pain.png" alt="Pain de mie complet"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Pain de mie
+                                    complet</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>250</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>12g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>3g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>45g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lipides sains -->
+        <div class="mb-5">
+            <h2 class="text-center mb-4">
+                <i class="bi bi-droplet-fill me-2"></i>Lipides sains
+            </h2>
+            <div class="row g-4">
+                <!-- Beurre -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/beurre.png" alt="Beurre"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Beurre</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>717</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.6g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>81g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.1g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noix -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/noix.png" alt="Noix"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Noix</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>654</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>15g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>65g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>14g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avocat -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/avocat.png" alt="Avocat"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Avocat</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>160</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>2g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>14.7g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>8.5g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Légumes & Fruits -->
+        <div class="mb-5">
+            <h2 class="text-center mb-4">
+                <i class="bi bi-apple me-2"></i>Légumes & Fruits
+            </h2>
+            <div class="row g-4">
+                <!-- Bananes -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/banane.png" alt="Bananes"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Bananes</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>89</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>1.1g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.3g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>22.8g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carottes -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/carotte.png" alt="Carottes"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Carottes</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>41</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.9g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.2g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>9.6g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oignons -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/oignon.png" alt="Oignons"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Oignons</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>40</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>1.1g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.1g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>9.3g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Épinards (cuits) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/epinards.png" alt="Épinards (cuits)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Épinards (cuits)
+                                </h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>23</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>2.9g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.3g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>3.6g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Haricots verts (cuits) -->
+                <div class="col-lg-6">
+                    <div class="program-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 80px; height: 80px; border-radius: 12px; overflow: hidden; margin-right: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                <img src="img/haricots.png" alt="Haricots verts (cuits)"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin-bottom: 0.3rem; font-size: 1.4rem; font-weight: 600;">Haricots verts
+                                    (cuits)</h3>
+                                <small>Pour 100g</small>
+                            </div>
+                        </div>
+                        <div class="row g-2 text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>31</div>
+                                    <small>Calories</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>1.8g</div>
+                                    <small>Protéines</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>0.2g</div>
+                                    <small>Lipides</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="day-card" style="padding: 1rem; margin-bottom: 0;">
+                                    <div>7g</div>
+                                    <small>Glucides</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-heart-pulse text-warning fs-2 me-2"></i>
+                <span>FitAPP © 2025</span>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/louis_mvc" class="social-icon me-3"><i
+                        class="bi bi-instagram"></i></a>
+                <a href="https://www.tiktok.com/@louis_mvc" class="social-icon me-3"><i class="bi bi-tiktok"></i></a>
+                <a href="https://github.com/LouisMalvache" class="social-icon me-3"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Votre JavaScript personnalisé -->
+    <script src="main.js"></script>
+</body>
+
+</html>
