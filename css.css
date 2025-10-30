@@ -276,6 +276,7 @@ body {
     background-color: var(--primary-color);
     color: var(--text-light);
     transform: scale(1.05);
+    right: 25%;
 }
 
 .exercise-image-container {
@@ -286,7 +287,7 @@ body {
     margin-top: 15px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
+    border-radius: 80px;
     flex-basis: 100%;
 }
 
