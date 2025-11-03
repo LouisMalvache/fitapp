@@ -1,13 +1,10 @@
 // ==========================================
-// FITAPP - JavaScript Principal Simplifié
+// FITAPP - JavaScript Principal Complet
 // ==========================================
 
 // ==========================================
 // 1. NAVIGATION ACTIVE
 // ==========================================
-/**
- * Active automatiquement le lien de navigation correspondant à la page actuelle
- */
 function initActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -18,106 +15,263 @@ function initActiveNav() {
     });
 }
 
-/**
- * ⬇️ Fait défiler la page de manière douce vers l'élément donné.
- */
 function scrollToElement(element) {
     if (element) {
-        // On décale de 100px pour éviter la navbar fixe
         window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
     }
 }
-
 
 // ==========================================
 // 2. DONNÉES DES EXERCICES (Images)
 // ==========================================
 const exerciseImages = {
     // Épaules
-    "Développé militaire": "img/Le-Developpe-Militaire.gif", "Élévations frontales": "img/elevation-frontale.gif",
-    "Élévations latérales": "img/elevation-laterale.gif", "Shrugs": "img/shrugs-avec-halteres.gif",
+    "Développé militaire": "img/Le-Developpe-Militaire.gif", 
+    "Élévations frontales": "img/elevation-frontale.gif",
+    "Élévations latérales": "img/elevation-laterale.gif", 
+    "Shrugs": "img/shrugs-avec-halteres.gif",
     // Biceps
-    "Curl pupitre barre EZ ": "img/curl-au-pupitre-barre-ez-larry-scott.gif", "Curl marteau": "img/curl-marteau.gif",
-    "Curl haltères incliné": "img/curl-haltere-incline.gif", "Curl concentration": "img/curl-concentre.gif",
+    "Curl pupitre barre EZ ": "img/curl-au-pupitre-barre-ez-larry-scott.gif", 
+    "Curl marteau": "img/curl-marteau.gif",
+    "Curl haltères incliné": "img/curl-haltere-incline.gif", 
+    "Curl concentration": "img/curl-concentre.gif",
     // Triceps
-    "Barre au front": "img/barre-front.gif", "Extension corde haute": "img/extension-haute.gif",
-    "Extension corde arriere": "img/extension-verticale-triceps-poulie-basse.gif", "Dips": "img/dips-triceps.gif",
+    "Barre au front": "img/barre-front.gif", 
+    "Extension corde haute": "img/extension-haute.gif",
+    "Extension corde arriere": "img/extension-verticale-triceps-poulie-basse.gif", 
+    "Dips": "img/dips-triceps.gif",
     "Pompes": "img/pompe-musculation.gif",
     // Pectoraux
-    "Développé couché": "img/developpe-couche.gif", "Écarté incliné": "img/dev-incliné.gif",
-    "Développé incliné haltères": "img/developpe-incline-halteres-exercice-musculation.gif", "Écarté poulie": "img/ecarte-poulie.gif",
+    "Développé couché": "img/developpe-couche.gif", 
+    "Écarté incliné": "img/dev-incliné.gif",
+    "Développé incliné haltères": "img/developpe-incline-halteres-exercice-musculation.gif", 
+    "Écarté poulie": "img/ecarte-poulie.gif",
     // Dos
-    "Traction": "img/traction-musculation-dos.gif", "Tirage horizontal": "img/tirage-horizontal-poulie.gif",
-    "Tirage vertical": "img/tirage-vertical-poitrine.gif", "Rowing barre": "img/rowing-barre.gif",
+    "Traction": "img/traction-musculation-dos.gif", 
+    "Tirage horizontal": "img/tirage-horizontal-poulie.gif",
+    "Tirage vertical": "img/tirage-vertical-poitrine.gif", 
+    "Rowing barre": "img/rowing-barre.gif",
     "Soulevé de terre": "img/souleve-de-terre-avec-deficit.gif",
     // Abdominaux
-    "Relevé de genoux suspendu": "img/releve-de-genoux-suspendu-exercice-musculation.gif", "Planche": "img/planche-abdos.gif",
+    "Relevé de genoux suspendu": "img/releve-de-genoux-suspendu-exercice-musculation.gif", 
+    "Planche": "img/planche-abdos.gif",
     // Jambes
-    "Squat": "img/squat.gif", "Presse à cuisses": "img/presse-a-cuisses-inclinee.gif",
-    "Leg extension": "img/leg-extension.gif", "Fentes avant": "img/fentes-avant-kettlebell.gif"
+    "Squat": "img/squat.gif", 
+    "Presse à cuisses": "img/presse-a-cuisses-inclinee.gif",
+    "Leg extension": "img/leg-extension.gif", 
+    "Fentes avant": "img/fentes-avant-kettlebell.gif"
 };
 
 // ==========================================
 // 3. DONNÉES DES PROGRAMMES
 // ==========================================
 const programs = {
-    "2days": { title: "Programme 2 Jours - Full Body", description: "Deux séances complètes pour travailler tout le corps", sessions: [
-        { day: "Jour 1 - Full Body A", muscle: "Corps Complet", exercises: [{ name: "Squat", sets: "4×8 rep" }, { name: "Développé couché", sets: "4×8 rep" }, { name: "Tirage horizontal", sets: "4×8 rep" }, { name: "Développé militaire", sets: "3×10 rep" }, { name: "Curl pupitre barre EZ ", sets: "3×10 rep" }, { name: "Extension corde haute", sets: "3×10 rep" }, { name: "Planche", sets: "2 min" }] },
-        { day: "Jour 2 - Full Body B", muscle: "Corps Complet", exercises: [{ name: "Soulevé de terre", sets: "4×6 rep" }, { name: "Écarté incliné", sets: "4×8 rep" }, { name: "Tirage vertical", sets: "4×8 rep" }, { name: "Élévations frontales", sets: "3×10 rep" }, { name: "Curl marteau", sets: "3×10 rep" }, { name: "Pompes", sets: "3×max" }, { name: "Planche", sets: "2 min" }] }
-    ]},
-    "3days": { title: "Programme 3 Jours - Push Pull Legs", description: "Split classique pour une progression optimale", sessions: [
-        { day: "Jour 1 - Push", muscle: "Poussée", exercises: [{ name: "Développé couché", sets: "4×8 rep" }, { name: "Développé incliné haltères", sets: "4×8 rep" }, { name: "Écarté poulie", sets: "3×10 rep" }, { name: "Développé militaire", sets: "4×8 rep" }, { name: "Élévations latérales", sets: "3×10 rep" }, { name: "Barre au front", sets: "3×8 rep" }, { name: "Extension corde arriere", sets: "3×8 rep" }] },
-        { day: "Jour 2 - Pull", muscle: "Traction", exercises: [{ name: "Soulevé de terre", sets: "4×6 rep" }, { name: "Traction", sets: "3×8 rep" }, { name: "Tirage horizontal", sets: "4×8 rep" }, { name: "Tirage vertical", sets: "3×8 rep" }, { name: "Shrugs", sets: "3×10 rep" }, { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, { name: "Curl marteau", sets: "3×8 rep" }] },
-        { day: "Jour 3 - Legs", muscle: "Jambes", exercises: [{ name: "Squat", sets: "4×8 rep" }, { name: "Presse à cuisses", sets: "4×8 rep" }, { name: "Leg extension", sets: "3×8 rep" }, {name: "Fentes avant", sets: "3×8 rep"}, { name: "Planche", sets: "2 min" }] }
-    ]},
-    "4days": { title: "Programme 4 Jours - Upper Lower", description: "Haute fréquence pour chaque groupe musculaire", sessions: [
-        { day: "Jour 1 - Upper A", muscle: "Haut du corps", exercises: [{ name: "Développé couché", sets: "4×8 rep" }, { name: "Tirage horizontal", sets: "4×8 rep" }, { name: "Développé militaire", sets: "3×8 rep" }, { name: "Tirage vertical", sets: "3×8 rep" }, { name: "Écarté poulie", sets: "3×8 rep" }, { name: "Curl pupitre barre EZ ", sets: "3×8 rep" }, { name: "Extension corde haute", sets: "3×8 rep" }] },
-        { day: "Jour 2 - Lower A", muscle: "Bas du corps", exercises: [{ name: "Squat", sets: "4×8 rep" }, { name: "Soulevé de terre", sets: "4×6 rep" }, { name: "Presse à cuisses", sets: "4×8 rep" }, { name: "Leg extension", sets: "3×8 rep" }, { name: "Planche", sets: "2 min" }] },
-        { day: "Jour 3 - Upper B", muscle: "Haut du corps", exercises: [{ name: "Écarté incliné", sets: "3×8 rep" }, { name: "Élévations latérales", sets: "3×8 rep" }, { name: "Tirage vertical", sets: "3×8 rep" }, { name: "Écarté poulie", sets: "3×8 rep" }, { name: "Curl marteau", sets: "3×8 rep" }, { name: "Dips", sets: "3×8 rep" }] },
-        { day: "Jour 4 - Lower B", muscle: "Bas du corps", exercises: [{ name: "Squat", sets: "4×8 rep" }, { name: "Soulevé de terre", sets: "4×6 rep" }, { name: "Presse à cuisses", sets: "4×8 rep" }, { name: "Leg extension", sets: "3×8 rep" }, { name: "Planche", sets: "2 min" }] },
-    ]},
-    "5days": { title: "Programme 5 Jours - Split Classique", description: "Volume maximal avec spécialisation par groupe musculaire", sessions: [
-        { day: "Jour 1 - Pectoraux", muscle: "Pectoraux", exercises: [{ name: "Développé couché", sets: "4×8 rep" }, { name: "Écarté incliné", sets: "4×8 rep" }, { name: "Développé incliné haltères", sets: "3×8 rep" }, { name: "Écarté poulie", sets: "3×8 rep" }, { name: "Pompes", sets: "3×max" }] },
-        { day: "Jour 2 - Dos", muscle: "Dos", exercises: [{ name: "Soulevé de terre", sets: "4×6 rep" }, { name: "Traction", sets: "4×max" }, { name: "Tirage vertical", sets: "4×8 rep" }, { name: "Rowing barre", sets: "3×8 rep" }, { name: "Tirage horizontal", sets: "3×8 rep" }] },
-        { day: "Jour 3 - Épaules", muscle: "Épaules", exercises: [{ name: "Développé militaire", sets: "4×8 rep" }, { name: "Élévations latérales", sets: "4×8 rep" }, { name: "Élévations frontales", sets: "3×8 rep" }, { name: "Shrugs", sets: "3×10 rep" }] },
-        { day: "Jour 4 - Jambes", muscle: "Jambes", exercises: [{ name: "Squat", sets: "4×6 rep" }, { name: "Presse à cuisses", sets: "4×8 rep" }, { name: "Leg extension", sets: "4×8 rep" } ] },
-        { day: "Jour 5 - Bras/Abdos", muscle: "Bras & Abdos", exercises: [{ name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, { name: "Barre au front", sets: "4×8 rep" }, { name: "Curl haltères incliné", sets: "3×8 rep" }, { name: "Dips", sets: "3×8 rep" }, { name: "Planche", sets: "2 min" }] }
-    ]}
+    "2days": { 
+        title: "Programme 2 Jours - Full Body", 
+        description: "Deux séances complètes pour travailler tout le corps", 
+        sessions: [
+            { day: "Jour 1 - Full Body A", muscle: "Corps Complet", exercises: [
+                { name: "Squat", sets: "4×8 rep" }, 
+                { name: "Développé couché", sets: "4×8 rep" }, 
+                { name: "Tirage horizontal", sets: "4×8 rep" }, 
+                { name: "Développé militaire", sets: "3×10 rep" }, 
+                { name: "Curl pupitre barre EZ ", sets: "3×10 rep" }, 
+                { name: "Extension corde haute", sets: "3×10 rep" }, 
+                { name: "Planche", sets: "2 min" }
+            ]},
+            { day: "Jour 2 - Full Body B", muscle: "Corps Complet", exercises: [
+                { name: "Soulevé de terre", sets: "4×6 rep" }, 
+                { name: "Écarté incliné", sets: "4×8 rep" }, 
+                { name: "Tirage vertical", sets: "4×8 rep" }, 
+                { name: "Élévations frontales", sets: "3×10 rep" }, 
+                { name: "Curl marteau", sets: "3×10 rep" }, 
+                { name: "Pompes", sets: "3×max" }, 
+                { name: "Planche", sets: "2 min" }
+            ]}
+        ]
+    },
+    "3days": { 
+        title: "Programme 3 Jours - Push Pull Legs", 
+        description: "Split classique pour une progression optimale", 
+        sessions: [
+            { day: "Jour 1 - Push", muscle: "Poussée", exercises: [
+                { name: "Développé couché", sets: "4×8 rep" }, 
+                { name: "Développé incliné haltères", sets: "4×8 rep" }, 
+                { name: "Écarté poulie", sets: "3×10 rep" }, 
+                { name: "Développé militaire", sets: "4×8 rep" }, 
+                { name: "Élévations latérales", sets: "3×10 rep" }, 
+                { name: "Barre au front", sets: "3×8 rep" }, 
+                { name: "Extension corde arriere", sets: "3×8 rep" }
+            ]},
+            { day: "Jour 2 - Pull", muscle: "Traction", exercises: [
+                { name: "Soulevé de terre", sets: "4×6 rep" }, 
+                { name: "Traction", sets: "3×8 rep" }, 
+                { name: "Tirage horizontal", sets: "4×8 rep" }, 
+                { name: "Tirage vertical", sets: "3×8 rep" }, 
+                { name: "Shrugs", sets: "3×10 rep" }, 
+                { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
+                { name: "Curl marteau", sets: "3×8 rep" }
+            ]},
+            { day: "Jour 3 - Legs", muscle: "Jambes", exercises: [
+                { name: "Squat", sets: "4×8 rep" }, 
+                { name: "Presse à cuisses", sets: "4×8 rep" }, 
+                { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "Fentes avant", sets: "3×8 rep" }, 
+                { name: "Planche", sets: "2 min" }
+            ]}
+        ]
+    },
+    "4days": { 
+        title: "Programme 4 Jours - Upper Lower", 
+        description: "Haute fréquence pour chaque groupe musculaire", 
+        sessions: [
+            { day: "Jour 1 - Upper A", muscle: "Haut du corps", exercises: [
+                { name: "Développé couché", sets: "4×8 rep" }, 
+                { name: "Tirage horizontal", sets: "4×8 rep" }, 
+                { name: "Développé militaire", sets: "3×8 rep" }, 
+                { name: "Tirage vertical", sets: "3×8 rep" }, 
+                { name: "Écarté poulie", sets: "3×8 rep" }, 
+                { name: "Curl pupitre barre EZ ", sets: "3×8 rep" }, 
+                { name: "Extension corde haute", sets: "3×8 rep" }
+            ]},
+            { day: "Jour 2 - Lower A", muscle: "Bas du corps", exercises: [
+                { name: "Squat", sets: "4×8 rep" }, 
+                { name: "Soulevé de terre", sets: "4×6 rep" }, 
+                { name: "Presse à cuisses", sets: "4×8 rep" }, 
+                { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "Planche", sets: "2 min" }
+            ]},
+            { day: "Jour 3 - Upper B", muscle: "Haut du corps", exercises: [
+                { name: "Écarté incliné", sets: "3×8 rep" }, 
+                { name: "Élévations latérales", sets: "3×8 rep" }, 
+                { name: "Tirage vertical", sets: "3×8 rep" }, 
+                { name: "Écarté poulie", sets: "3×8 rep" }, 
+                { name: "Curl marteau", sets: "3×8 rep" }, 
+                { name: "Dips", sets: "3×8 rep" }
+            ]},
+            { day: "Jour 4 - Lower B", muscle: "Bas du corps", exercises: [
+                { name: "Squat", sets: "4×8 rep" }, 
+                { name: "Soulevé de terre", sets: "4×6 rep" }, 
+                { name: "Presse à cuisses", sets: "4×8 rep" }, 
+                { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "Planche", sets: "2 min" }
+            ]}
+        ]
+    },
+    "5days": { 
+        title: "Programme 5 Jours - Split Classique", 
+        description: "Volume maximal avec spécialisation par groupe musculaire", 
+        sessions: [
+            { day: "Jour 1 - Pectoraux", muscle: "Pectoraux", exercises: [
+                { name: "Développé couché", sets: "4×8 rep" }, 
+                { name: "Écarté incliné", sets: "4×8 rep" }, 
+                { name: "Développé incliné haltères", sets: "3×8 rep" }, 
+                { name: "Écarté poulie", sets: "3×8 rep" }, 
+                { name: "Pompes", sets: "3×max" }
+            ]},
+            { day: "Jour 2 - Dos", muscle: "Dos", exercises: [
+                { name: "Soulevé de terre", sets: "4×6 rep" }, 
+                { name: "Traction", sets: "4×max" }, 
+                { name: "Tirage vertical", sets: "4×8 rep" }, 
+                { name: "Rowing barre", sets: "3×8 rep" }, 
+                { name: "Tirage horizontal", sets: "3×8 rep" }
+            ]},
+            { day: "Jour 3 - Épaules", muscle: "Épaules", exercises: [
+                { name: "Développé militaire", sets: "4×8 rep" }, 
+                { name: "Élévations latérales", sets: "4×8 rep" }, 
+                { name: "Élévations frontales", sets: "3×8 rep" }, 
+                { name: "Shrugs", sets: "3×10 rep" }
+            ]},
+            { day: "Jour 4 - Jambes", muscle: "Jambes", exercises: [
+                { name: "Squat", sets: "4×6 rep" }, 
+                { name: "Presse à cuisses", sets: "4×8 rep" }, 
+                { name: "Leg extension", sets: "4×8 rep" }
+            ]},
+            { day: "Jour 5 - Bras/Abdos", muscle: "Bras & Abdos", exercises: [
+                { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
+                { name: "Barre au front", sets: "4×8 rep" }, 
+                { name: "Curl haltères incliné", sets: "3×8 rep" }, 
+                { name: "Dips", sets: "3×8 rep" }, 
+                { name: "Planche", sets: "2 min" }
+            ]}
+        ]
+    }
 };
 
 // ==========================================
 // 3.5 DONNÉES DES SÉANCES PAR MUSCLE
 // ==========================================
 const muscleWorkouts = {
-    "2days": { title: "Séance Bras", sessions: [
-        { day: "Biceps", muscle: "Biceps", exercises: [{ name: "Curl pupitre barre EZ ", sets: "4×8-10" }, { name: "Curl marteau", sets: "3×10-12" }, { name: "Curl haltères incliné", sets: "3×10-12" }, { name: "Curl concentration", sets: "3×12-15" }] },
-        { day: "Triceps", muscle: "Triceps", exercises: [{ name: "Barre au front", sets: "4×8-10" }, { name: "Extension corde haute", sets: "3×10-12" }, { name: "Extension corde arriere", sets: "3×10-12" }, { name: "Dips", sets: "3×8-12" }] }
-    ]},
-    "3days": { title: "Séance Épaules & Pectoraux", sessions: [
-        { day: "Épaules", muscle: "Épaules", exercises: [{ name: "Développé militaire", sets: "4×8-10" }, { name: "Élévations latérales", sets: "4×12-15" }, { name: "Élévations frontales", sets: "3×10-12" }, { name: "Shrugs", sets: "3×12-15" }] },
-        { day: "Pectoraux", muscle: "Pectoraux", exercises: [{ name: "Développé couché", sets: "4×8-10" }, { name: "Développé incliné haltères", sets: "4×8-10" }, { name: "Écarté incliné", sets: "4×8-10" }, { name: "Écarté poulie", sets: "3×12-15" }, { name: "Pompes", sets: "3×max" }] }
-    ]},
-    "4days": { title: "Séance Dos", sessions: [
-        { day: "Dos Complet", muscle: "Dos", exercises: [{ name: "Soulevé de terre", sets: "4×6-8" }, { name: "Traction", sets: "4×8-10" }, { name: "Rowing barre", sets: "4×8-10" }, { name: "Tirage vertical", sets: "3×10-12" }, { name: "Tirage horizontal", sets: "3×10-12" }, { name: "Shrugs", sets: "3×12-15" }] }
-    ]},
-    "5days": { title: "Séance Jambes", sessions: [
-        { day: "Jambes Complètes", muscle: "Jambes", exercises: [{ name: "Squat", sets: "4×8-10" }, { name: "Presse à cuisses", sets: "4×10-12" }, { name: "Leg extension", sets: "3×12-15" }, { name: "Fentes avant", sets: "3×12-15" }] }
-    ]}
+    "2days": { 
+        title: "Séance Bras", 
+        sessions: [
+            { day: "Biceps", muscle: "Biceps", exercises: [
+                { name: "Curl pupitre barre EZ ", sets: "4×8-10" }, 
+                { name: "Curl marteau", sets: "3×10-12" }, 
+                { name: "Curl haltères incliné", sets: "3×10-12" }, 
+                { name: "Curl concentration", sets: "3×12-15" }
+            ]},
+            { day: "Triceps", muscle: "Triceps", exercises: [
+                { name: "Barre au front", sets: "4×8-10" }, 
+                { name: "Extension corde haute", sets: "3×10-12" }, 
+                { name: "Extension corde arriere", sets: "3×10-12" }, 
+                { name: "Dips", sets: "3×8-12" }
+            ]}
+        ]
+    },
+    "3days": { 
+        title: "Séance Épaules & Pectoraux", 
+        sessions: [
+            { day: "Épaules", muscle: "Épaules", exercises: [
+                { name: "Développé militaire", sets: "4×8-10" }, 
+                { name: "Élévations latérales", sets: "4×12-15" }, 
+                { name: "Élévations frontales", sets: "3×10-12" }, 
+                { name: "Shrugs", sets: "3×12-15" }
+            ]},
+            { day: "Pectoraux", muscle: "Pectoraux", exercises: [
+                { name: "Développé couché", sets: "4×8-10" }, 
+                { name: "Développé incliné haltères", sets: "4×8-10" }, 
+                { name: "Écarté incliné", sets: "4×8-10" }, 
+                { name: "Écarté poulie", sets: "3×12-15" }, 
+                { name: "Pompes", sets: "3×max" }
+            ]}
+        ]
+    },
+    "4days": { 
+        title: "Séance Dos", 
+        sessions: [
+            { day: "Dos Complet", muscle: "Dos", exercises: [
+                { name: "Soulevé de terre", sets: "4×6-8" }, 
+                { name: "Traction", sets: "4×8-10" }, 
+                { name: "Rowing barre", sets: "4×8-10" }, 
+                { name: "Tirage vertical", sets: "3×10-12" }, 
+                { name: "Tirage horizontal", sets: "3×10-12" }, 
+                { name: "Shrugs", sets: "3×12-15" }
+            ]}
+        ]
+    },
+    "5days": { 
+        title: "Séance Jambes", 
+        sessions: [
+            { day: "Jambes Complètes", muscle: "Jambes", exercises: [
+                { name: "Squat", sets: "4×8-10" }, 
+                { name: "Presse à cuisses", sets: "4×10-12" }, 
+                { name: "Leg extension", sets: "3×12-15" }, 
+                { name: "Fentes avant", sets: "3×12-15" }
+            ]}
+        ]
+    }
 };
 
 // ==========================================
 // 4. FONCTIONS PROGRAMMES
 // ==========================================
 
-/**
- * 🖼️ Affiche/masque l'image d'un exercice quand on clique sur l'icône.
- */
 function toggleExerciseImage(button, exerciseName) {
     const item = button.closest('.exercise-item');
     const statsSpan = item.querySelector('.exercise-stats');
     let imageContainer = item.querySelector('.exercise-image-container');
 
-    // On utilise la variable ORIGINALE : exerciseImages
     const imageUrl = exerciseImages[exerciseName]; 
     if (!imageUrl) {
         alert(`Oups ! Image non trouvée pour : ${exerciseName}`);
@@ -144,9 +298,6 @@ function toggleExerciseImage(button, exerciseName) {
     }
 }
 
-/**
- * 🔄 FONCTION FUSIONNÉE : Affiche les détails d'un programme OU d'une séance.
- */
 function renderSessionDetails(data, isProgram = true) {
     const { title, sessions } = data;
     const programTitle = document.getElementById('program-title');
@@ -163,9 +314,7 @@ function renderSessionDetails(data, isProgram = true) {
         const icon = isProgram ? 'fa-calendar-day' : 'fa-dumbbell';
         const muscleInfo = isProgram ? `<p class="text-muted">Objectif : ${session.muscle}</p>` : '';
 
-        // Utilisation de .map().join('') pour générer le HTML des exercices (plus court !)
         const exercisesHtml = session.exercises.map(exercise => {
-            // On utilise encore la variable exerciseImages ici
             const hasImage = exerciseImages.hasOwnProperty(exercise.name);
             const imageButtonHtml = hasImage ?
                 `<button type="button" class="btn btn-sm btn-image-toggle" onclick="toggleExerciseImage(this, '${exercise.name.replace(/'/g, "\\'")}')">
@@ -208,25 +357,14 @@ function renderSessionDetails(data, isProgram = true) {
     scrollToElement(sessionDetails);
 }
 
-/**
- * Affiche les détails d'un programme (pour programmes.html)
- */
 function showProgramDetails(programKey) {
-    // On utilise la variable ORIGINALE : programs
     renderSessionDetails(programs[programKey], true); 
 }
 
-/**
- * Affiche les exercices par muscle (pour seance.html)
- */
 function showMuscleWorkout(muscleKey) {
-    // On utilise la variable ORIGINALE : muscleWorkouts
     renderSessionDetails(muscleWorkouts[muscleKey], false); 
 }
 
-/**
- * ⬅️ Revenir à la sélection des programmes/séances.
- */
 function backToPrograms() {
     const sessionDetails = document.getElementById('session-details');
     const programSelection = document.getElementById('program-selection');
@@ -237,9 +375,6 @@ function backToPrograms() {
     if (programSelection) scrollToElement(programSelection);
 }
 
-/**
- * 🚀 Initialise les événements pour une page de type Programme/Séance.
- */
 function initProgramOrSeancePage(dataSet, showFn) {
     document.querySelectorAll('.program-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -248,190 +383,172 @@ function initProgramOrSeancePage(dataSet, showFn) {
         });
     });
 
-    // Rendre les fonctions globales pour le HTML
     window.backToPrograms = backToPrograms;
     window.toggleExerciseImage = toggleExerciseImage;
 }
 
-
 // ==========================================
-// 6. TRACKER DE PERFORMANCES (PR)
+// 5. TRACKER DE PERFORMANCES (PR)
 // ==========================================
 
-// Liste des exercices pour le tracker PR (on garde le nom d'origine)
-const PR_EXERCISES = [
-    { name: "Développé couché", icon: "bi-arrow-bar-up" },
-    { name: "Squat", icon: "bi-arrow-down-square" },
-    { name: "Soulevé de terre", icon: "bi-box-arrow-up" },
-    { name: "Développé militaire", icon: "bi-arrow-up-circle" },
-    { name: "Traction", icon: "bi-arrow-up" },
-    { name: "Rowing barre", icon: "bi-bar-chart-line" },
-    { name: "Développé incliné", icon: "bi-layout-text-window-reverse" },
-    { name: "Curl barre", icon: "bi-hand-index-thumb" },
-    { name: "Presse inclinée", icon: "bi-arrow-down" },
-    { name: "Presse à cuisses", icon: "bi-columns-gap" }
+// Liste des exercices pour le tracker PR
+const trackerExercises = [
+    { id: 1, name: 'Développé couché', icon: 'bi-arrow-bar-up', fields: ['Poids (kg)', 'Reps'] },
+    { id: 2, name: 'Squat', icon: 'bi-arrow-down-square', fields: ['Poids (kg)', 'Reps'] },
+    { id: 3, name: 'Soulevé de terre', icon: 'bi-box-arrow-up', fields: ['Poids (kg)', 'Reps'] },
+    { id: 4, name: 'Développé militaire', icon: 'bi-arrow-up-circle', fields: ['Poids (kg)', 'Reps'] },
+    { id: 5, name: 'Traction', icon: 'bi-arrow-up', fields: ['Reps', 'Lest (kg)'] },
+    { id: 6, name: 'Presse à cuisses', icon: 'bi-arrow-down', fields: ['Poids (kg)', 'Reps'] },
+    { id: 7, name: 'Rowing barre', icon: 'bi-bar-chart-line', fields: ['Poids (kg)', 'Reps'] },
+    { id: 8, name: 'Curl pupitre barre EZ ', icon: 'bi-file-bar-graph', fields: ['Poids (kg)', 'Reps'] },
 ];
 
-// On garde l'état du tracker en mémoire
-let prData = []; 
 let selectedExercises = [];
 
-/**
- * 🛠️ Crée la grille cliquable des exercices.
- */
-function renderExerciseGrid() {
-    const grid = document.getElementById('exercise-grid');
-    if (!grid) return;
-
-    grid.innerHTML = PR_EXERCISES.map(ex => {
-        const isSelected = selectedExercises.includes(ex.name);
-        return `
-            <div class="exercise-card ${isSelected ? 'selected' : ''}" data-exercise="${ex.name}" onclick="toggleExerciseSelection('${ex.name}')">
-                <i class="exercise-icon bi ${ex.icon}"></i>
-                <p class="exercise-name">${ex.name}</p>
-            </div>
-        `;
-    }).join('');
+function initExercises() {
+    const container = document.getElementById('exerciseList');
+    if (!container) return;
+    
+    container.innerHTML = trackerExercises.map(ex => `
+        <div class="exercise-card" onclick="toggleExercise(${ex.id})">
+            <i class="exercise-icon bi ${ex.icon}"></i>
+            <h5 class="exercise-name">${ex.name}</h5>
+        </div>
+    `).join('');
 }
 
-/**
- * 🖱️ Ajoute/enlève un exercice de la liste du jour.
- */
-function toggleExerciseSelection(exerciseName) {
-    const card = document.querySelector(`.exercise-card[data-exercise="${exerciseName}"]`);
-    
-    if (selectedExercises.includes(exerciseName)) {
-        selectedExercises = selectedExercises.filter(ex => ex !== exerciseName);
+function toggleExercise(id) {
+    const exercise = trackerExercises.find(ex => ex.id === id);
+    const index = selectedExercises.findIndex(ex => ex.id === id);
+
+    if (index > -1) {
+        selectedExercises.splice(index, 1);
     } else {
-        selectedExercises.push(exerciseName);
+        selectedExercises.push({
+            ...exercise,
+            values: {}
+        });
     }
 
-    card.classList.toggle('selected');
+    updateUI();
     renderPerformanceBoard();
 }
 
-/**
- * 📊 Affiche le tableau de saisie des performances.
- */
+function updateUI() {
+    const exerciseCards = document.querySelectorAll('#exerciseList .exercise-card');
+    exerciseCards.forEach(card => {
+        const id = parseInt(card.getAttribute('onclick').match(/\d+/)[0]);
+        const isSelected = selectedExercises.some(ex => ex.id === id);
+        card.classList.toggle('selected', isSelected);
+    });
+
+    const actionButtons = document.getElementById('actionButtons');
+    if (actionButtons) {
+        actionButtons.style.display = selectedExercises.length > 0 ? 'block' : 'none';
+    }
+}
+
 function renderPerformanceBoard() {
-    const board = document.getElementById('performance-board');
+    const board = document.getElementById('performanceBoard');
     if (!board) return;
 
-    const today = new Date().toLocaleDateString('fr-FR');
-    
     if (selectedExercises.length === 0) {
         board.innerHTML = `
             <div class="empty-state">
                 <i class="bi bi-hand-index-thumb"></i>
                 <h3>Sélectionne des exercices ci-dessus</h3>
+                <p>Clique sur les exercices pour les ajouter à ton tableau de performances</p>
             </div>
         `;
         return;
     }
 
-    const prItemsHtml = selectedExercises.map(ex => {
-        const existingPR = prData.find(pr => pr.exercise === ex && pr.date === today);
-        const icon = PR_EXERCISES.find(p => p.name === ex)?.icon || 'bi-dumbbell';
-        
-        return `
-            <div class="pr-item slide-in">
-                <div class="pr-item-header">
-                    <i class="bi ${icon}"></i>
-                    <h4>${ex}</h4>
-                </div>
-                <div class="pr-inputs">
-                    <div class="pr-input-group">
-                        <label>Poids (kg)</label>
-                        <input type="number" id="weight-${ex}" placeholder="0" 
-                               value="${existingPR ? existingPR.weight : ''}" min="0" step="0.5">
-                    </div>
-                    <div class="pr-input-group">
-                        <label>Répétitions</label>
-                        <input type="number" id="reps-${ex}" placeholder="0" 
-                               value="${existingPR ? existingPR.reps : ''}" min="0" step="1">
-                    </div>
-                    <div class="pr-input-group">
-                        <label>Séries</label>
-                        <input type="number" id="sets-${ex}" placeholder="0" 
-                               value="${existingPR ? existingPR.sets : ''}" min="0" step="1">
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join('');
+    const today = new Date().toLocaleDateString('fr-FR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
 
     board.innerHTML = `
-        <h2 class="performance-title">📊 Mes Records</h2>
-        <div class="text-center"><span class="date-badge">📅 ${today}</span></div>
-        ${prItemsHtml}
-        <div class="action-buttons">
-          <button class="btn-capture" onclick="capturePerformances()">
-            <i class="fas fa-save me-2"></i> Enregistrer mes PRs
-          </button>
-          <button class="btn-reset" onclick="resetSelection()">
-            <i class="fas fa-redo me-2"></i> Réinitialiser
-          </button>
+        <h2 class="performance-title">
+            <i class="bi bi-trophy-fill me-2"></i>Mes Records
+        </h2>
+        <div class="text-center">
+            <span class="date-badge">
+                <i class="bi bi-calendar-check me-2"></i>${today}
+            </span>
         </div>
-        <div id="screenshot-instructions" style="display:none;">
-          <p><i class="fas fa-camera me-2"></i> N'oublie pas le screenshot pour garder une trace !</p>
-        </div>
+        ${selectedExercises.map(ex => `
+            <div class="pr-item slide-in">
+                <div class="pr-item-header">
+                    <i class="bi ${ex.icon}"></i>
+                    <h4>${ex.name}</h4>
+                </div>
+                <div class="pr-inputs">
+                    ${ex.fields.map(field => `
+                        <div class="pr-input-group">
+                            <label>${field}</label>
+                            <input
+                                type="text"
+                                placeholder="--"
+                                oninput="updateValue(${ex.id}, '${field}', this.value)"
+                                value="${ex.values[field] || ''}"
+                            >
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('')}
     `;
 }
 
-/**
- * 💾 Récupère les valeurs des champs de saisie et les sauvegarde.
- */
-function capturePerformances() {
-    const today = new Date().toLocaleDateString('fr-FR');
-    let hasData = false;
-
-    selectedExercises.forEach(ex => {
-        const weight = parseFloat(document.getElementById(`weight-${ex}`)?.value) || 0;
-        const reps = parseInt(document.getElementById(`reps-${ex}`)?.value) || 0;
-        const sets = parseInt(document.getElementById(`sets-${ex}`)?.value) || 0;
-
-        if (weight > 0 || reps > 0 || sets > 0) {
-            hasData = true;
-            
-            prData = prData.filter(pr => !(pr.exercise === ex && pr.date === today));
-            prData.push({ exercise: ex, date: today, weight, reps, sets });
-        }
-    });
-
-    if (hasData) {
-        alert('Performances enregistrées !');
-        renderPerformanceBoard(); 
-        const instructions = document.getElementById('screenshot-instructions');
-        if (instructions) instructions.style.display = 'block';
-    } else {
-        alert('Dis-donc, tu n\'as rien saisi !');
+function updateValue(exerciseId, field, value) {
+    const exercise = selectedExercises.find(ex => ex.id === exerciseId);
+    if (exercise) {
+        exercise.values[field] = value;
     }
 }
 
-/**
- * 🗑️ Vide la sélection d'exercices.
- */
-function resetSelection() {
-    selectedExercises = [];
-    renderExerciseGrid();
-    renderPerformanceBoard();
+function resetAll() {
+    if (confirm('Êtes-vous sûr de vouloir réinitialiser tous les exercices et valeurs ?')) {
+        selectedExercises = [];
+        updateUI();
+        renderPerformanceBoard();
+    }
 }
 
-/**
- * 🚀 Initialise la page du Tracker.
- */
+function captureScreenshot() {
+    const instructions = document.getElementById('screenshot-instructions');
+    if (instructions) {
+        instructions.style.display = 'block';
+
+        setTimeout(() => {
+            instructions.style.display = 'none';
+        }, 5000);
+    }
+
+    const performanceBoard = document.getElementById('performanceBoard');
+    if (performanceBoard) {
+        performanceBoard.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}
+
 function initTrackerPage() {
-    renderExerciseGrid();
+    initExercises();
     renderPerformanceBoard();
     
-    window.toggleExerciseSelection = toggleExerciseSelection;
-    window.capturePerformances = capturePerformances;
-    window.resetSelection = resetSelection;
+    // Rendre les fonctions globales
+    window.toggleExercise = toggleExercise;
+    window.updateValue = updateValue;
+    window.resetAll = resetAll;
+    window.captureScreenshot = captureScreenshot;
 }
 
-
 // ==========================================
-// 7. INITIALISATION AU CHARGEMENT
+// 6. INITIALISATION AU CHARGEMENT
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     initActiveNav();
@@ -440,18 +557,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Page programmes.html
     if (currentPage === 'programmes.html') {
-        // On passe ta variable 'programs' et la fonction qui doit l'afficher
         initProgramOrSeancePage(programs, showProgramDetails); 
     }
     
     // Page seance.html
     if (currentPage === 'seance.html') {
-        // On passe ta variable 'muscleWorkouts' et la fonction qui doit l'afficher
         initProgramOrSeancePage(muscleWorkouts, showMuscleWorkout); 
     }
     
-    // Page tracker.html
-    if (currentPage === 'tracker.html') {
+    // Page tracker.html (contact.html selon la nav)
+    if (currentPage === 'tracker.html' || currentPage === 'contact.html') {
         initTrackerPage();
     }
 });
