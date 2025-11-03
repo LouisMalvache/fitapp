@@ -17,6 +17,10 @@
 /* BASE */
 html { height: 100%; }
 
+.p {
+    color: aliceblue;
+}
+
 body {
     background: var(--gradient-dark);
     color: var(--text-light);
