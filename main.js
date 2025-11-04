@@ -214,16 +214,16 @@ const muscleWorkouts = {
         title: "Séance Bras", 
         sessions: [
             { day: "Biceps", muscle: "Biceps", exercises: [
-                { name: "Curl pupitre barre EZ ", sets: "4×8-10" }, 
-                { name: "Curl marteau", sets: "3×10-12" }, 
-                { name: "Curl haltères incliné", sets: "3×10-12" }, 
-                { name: "Curl concentration", sets: "3×12-15" }
+                { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
+                { name: "Curl marteau", sets: "3×8 rep" }, 
+                { name: "Curl haltères incliné", sets: "3×8 rep" }, 
+                { name: "Curl concentration", sets: "3×8 rep" }
             ]},
             { day: "Triceps", muscle: "Triceps", exercises: [
-                { name: "Barre au front", sets: "4×8-10" }, 
-                { name: "Extension corde haute", sets: "3×10-12" }, 
-                { name: "Extension corde arriere", sets: "3×10-12" }, 
-                { name: "Dips", sets: "3×8-12" }
+                { name: "Barre au front", sets: "4×8 rep" }, 
+                { name: "Extension corde haute", sets: "3×8 rep" }, 
+                { name: "Extension corde arriere", sets: "3×8 rep" }, 
+                { name: "Dips", sets: "3×8 rep" }
             ]}
         ]
     },
@@ -231,16 +231,16 @@ const muscleWorkouts = {
         title: "Séance Épaules & Pectoraux", 
         sessions: [
             { day: "Épaules", muscle: "Épaules", exercises: [
-                { name: "Développé militaire", sets: "4×8-10" }, 
-                { name: "Élévations latérales", sets: "4×12-15" }, 
-                { name: "Élévations frontales", sets: "3×10-12" }, 
-                { name: "Shrugs", sets: "3×12-15" }
+                { name: "Développé militaire", sets: "4×8 rep" }, 
+                { name: "Élévations latérales", sets: "4×10 rep" }, 
+                { name: "Élévations frontales", sets: "3×8 rep" }, 
+                { name: "Shrugs", sets: "3×10 rep" }
             ]},
             { day: "Pectoraux", muscle: "Pectoraux", exercises: [
-                { name: "Développé couché", sets: "4×8-10" }, 
-                { name: "Développé incliné haltères", sets: "4×8-10" }, 
-                { name: "Écarté incliné", sets: "4×8-10" }, 
-                { name: "Écarté poulie", sets: "3×12-15" }, 
+                { name: "Développé couché", sets: "4×8 rep" }, 
+                { name: "Développé incliné haltères", sets: "4×8 rep" }, 
+                { name: "Écarté incliné", sets: "4×8 rep" }, 
+                { name: "Écarté poulie", sets: "3×8 rep" }, 
                 { name: "Pompes", sets: "3×max" }
             ]}
         ]
@@ -249,12 +249,12 @@ const muscleWorkouts = {
         title: "Séance Dos", 
         sessions: [
             { day: "Dos Complet", muscle: "Dos", exercises: [
-                { name: "Soulevé de terre", sets: "4×6-8" }, 
-                { name: "Traction", sets: "4×8-10" }, 
-                { name: "Rowing barre", sets: "4×8-10" }, 
-                { name: "Tirage vertical", sets: "3×10-12" }, 
-                { name: "Tirage horizontal", sets: "3×10-12" }, 
-                { name: "Shrugs", sets: "3×12-15" }
+                { name: "Soulevé de terre", sets: "4×6 rep" }, 
+                { name: "Traction", sets: "4×8 rep" }, 
+                { name: "Rowing barre", sets: "4×8 rep" }, 
+                { name: "Tirage vertical", sets: "3×8 rep" }, 
+                { name: "Tirage horizontal", sets: "3×8 rep" }, 
+                { name: "Shrugs", sets: "3×10 rep" }
             ]}
         ]
     },
@@ -262,10 +262,10 @@ const muscleWorkouts = {
         title: "Séance Jambes", 
         sessions: [
             { day: "Jambes Complètes", muscle: "Jambes", exercises: [
-                { name: "Squat", sets: "4×8-10" }, 
-                { name: "Presse à cuisses", sets: "4×10-12" }, 
-                { name: "Leg extension", sets: "3×12-15" }, 
-                { name: "Fentes avant", sets: "3×12-15" }
+                { name: "Squat", sets: "4×8 rep" }, 
+                { name: "Presse à cuisses", sets: "4×8 rep" }, 
+                { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "Fentes avant", sets: "3×10 rep" }
             ]}
         ]
     },
