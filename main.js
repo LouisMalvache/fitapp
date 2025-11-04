@@ -30,6 +30,7 @@ const exerciseImages = {
     "Élévations frontales": "img/elevation-frontale.gif",
     "Élévations latérales": "img/elevation-laterale.gif", 
     "Shrugs": "img/shrugs-avec-halteres.gif",
+    "developpe-epaules-assis": "img/developpe-epaules-assis.gif",
     // Biceps
     "Curl pupitre barre EZ ": "img/curl-au-pupitre-barre-ez-larry-scott.gif", 
     "Curl marteau": "img/curl-marteau.gif",
@@ -46,6 +47,9 @@ const exerciseImages = {
     "Écarté incliné": "img/dev-incliné.gif",
     "Développé incliné haltères": "img/developpe-incline-halteres-exercice-musculation.gif", 
     "Écarté poulie": "img/ecarte-poulie.gif",
+    "pompes-incline":"img/pompes-incline.gif",
+    "pompes-declinee":"img/pompe-declinee.gif",
+    "dips-chaise":"img/dips-chaise.gif",
     // Dos
     "Traction": "img/traction-musculation-dos.gif", 
     "Tirage horizontal": "img/tirage-horizontal-poulie.gif",
@@ -55,11 +59,15 @@ const exerciseImages = {
     // Abdominaux
     "Relevé de genoux suspendu": "img/releve-de-genoux-suspendu-exercice-musculation.gif", 
     "Planche": "img/planche-abdos.gif",
+    "crunch": "img/crunch.gif",
+    "mountain-climber":"img/mountain-climber.gif",
+    "planche-inversee":"img/planche-inversee.gif",
     // Jambes
     "Squat": "img/squat.gif", 
     "Presse à cuisses": "img/presse-a-cuisses-inclinee.gif",
     "Leg extension": "img/leg-extension.gif", 
-    "Fentes avant": "img/fentes-avant-kettlebell.gif"
+    "Fentes avant": "img/fentes-avant-kettlebell.gif",
+    "squat-saute": "img/squat-saute.gif"
 };
 
 // ==========================================
@@ -260,7 +268,31 @@ const muscleWorkouts = {
                 { name: "Fentes avant", sets: "3×12-15" }
             ]}
         ]
-    }
+    },
+    "maison": {
+        title: "Séance Maison",
+        sessions: [
+            { day: "maison sans materiel", muscle: "Tout", exercises: [
+                {name: "Pompes", sets: "3×max"},
+                {name: "Planche", sets: "2min"},
+                {name: "crunch", sets: "3×max"},
+                {name: "mountain-climber", sets: "3×max"},
+                {name: "squat-saute", sets: "3×max"},
+                {name: "planche-inversee", sets: "2 min"}
+            ]
+            },
+            { day: "maison avec materiel", muscle: "Tout", exercises: [
+                {name: "pompes-incline", sets: "3×max"},
+                {name: "pompes-declinee", sets: "3×max"},
+                {name: "dips-chaise", sets: "3×max"},
+                {name: "developpe-epaules-assis", sets:"3×max"},
+                {name: "Traction", sets:"3×max"},
+                {name: "Curl marteau", sets:"3×max"}
+            ]
+
+            }
+        ]
+    },
 };
 
 // ==========================================

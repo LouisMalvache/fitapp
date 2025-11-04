@@ -575,6 +575,10 @@ body {
 .p5 { top: 60%; left: 10%; transform: rotate(3deg); }
 .p6 { top: 63%; right: 8%; transform: rotate(-2deg); }
 
+#program-selection {
+    justify-content: center;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .mur-collage {
