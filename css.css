@@ -706,4 +706,54 @@ body {
 
 @media (max-width: 500px) {
     .photo { width: 80%; max-width: none; }
+    /* RESPONSIVE pour la carte philosophie */
+@media (max-width: 768px) {
+    .philosophy-card {
+        padding: 40px 30px !important;
+        min-height: auto;
+    }
+    
+    .philosophy-logo {
+        height: 100px;
+    }
+    
+    .philosophy-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .philosophy-text {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .philosophy-accent-line {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .philosophy-card {
+        padding: 30px 20px !important;
+    }
+    
+    .philosophy-logo {
+        height: 80px;
+    }
+    
+    .philosophy-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .philosophy-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .philosophy-accent-line {
+        width: 80px;
+        height: 3px;
+    }
+}
 }
