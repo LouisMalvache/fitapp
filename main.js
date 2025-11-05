@@ -74,6 +74,31 @@ const exerciseImages = {
 // 3. DONNÉES DES PROGRAMMES
 // ==========================================
 const programs = {
+"full body complet": {
+    title: "Full Body Optimisé & Complet", 
+    description: "Ta sélection améliorée avec tous les groupes musculaires", 
+    sessions: [
+        { day: "Full Body Complet", muscle: "Corps Complet", exercises: [
+            { name: "Curl pupitre barre EZ ", sets: "3×10-15 rep" },
+            { name: "Curl haltères incliné", sets: "3×10-15 rep" },
+            { name: "Extension corde haute", sets: "3×12-15 rep" },
+            { name: "Extension corde arriere", sets: "3×12-15 rep" },
+            { name: "Développé incliné haltères", sets: "3×8-12 rep" },
+            { name: "Écarté poulie", sets: "3×12-15 rep" },
+            { name: "Élévations latérales", sets: "3×12-15 rep" },
+            { name: "Presse à cuisses", sets: "3×10-15 rep" },
+            { name: "Leg extension", sets: "3×12-15 rep" },
+            { name: "Squat", sets: "4×8-12 rep" },
+            { name: "Tirage horizontal", sets: "3×8-12 rep" },
+            { name: "Tirage vertical", sets: "3×8-12 rep" },
+            { name: "Soulevé de terre", sets: "4×6-10 rep" },
+            { name: "Développé couché", sets: "4×8-12 rep" },
+            { name: "Développé militaire", sets: "3×10-12 rep" },
+            { name: "Planche", sets: "2 min" }
+        ]}
+    ]
+},
+
     "2days": { 
         title: "Programme 2 Jours - Full Body", 
         description: "Deux séances complètes pour travailler tout le corps", 
