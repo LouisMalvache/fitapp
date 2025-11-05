@@ -15,6 +15,39 @@
     box-sizing: border-box;
 }
 
+.philosophy-card-large {
+  padding: 80px 60px !important;
+  min-height: 400px;
+}
+
+.philosophy-logo {
+  height: 200px;
+  filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.4));
+  animation: pulse 2s infinite;
+}
+
+.philosophy-title {
+  color: #ff6b35;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.philosophy-text {
+  color: #e0e0e0;
+  font-size: 1.6rem;
+  line-height: 2;
+  font-style: italic;
+}
+
+.philosophy-accent-line {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35 0%, transparent 100%);
+  border-radius: 2px;
+}
+
+
 /* BASE */
 html { height: 100%; }
 
