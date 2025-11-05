@@ -1,3 +1,4 @@
+/*style principale*/
 :root {
     --primary-color: #FF4500;
     --secondary-color: #1A1A1A;
@@ -17,10 +18,11 @@
 /* BASE */
 html { height: 100%; }
 
+/*couleur texte (p)*/
 .p {
     color: aliceblue;
 }
-
+/*style du body*/
 body {
     background: var(--gradient-dark);
     color: var(--text-light);
