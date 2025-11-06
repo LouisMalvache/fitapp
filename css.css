@@ -15,6 +15,19 @@
     box-sizing: border-box;
 }
 
+/*caroussel*/
+#myCarousel .carousel-inner img {
+  width: 100%;
+  height: 700px; /* Hauteur fixe pour toutes les images */
+  object-fit: cover; /* Recadre les images pour remplir l'espace */
+  object-position: center; /* Centre l'image */
+}
+
+/* Éloigner le carousel du header */
+#myCarousel {
+  margin-top: 100px; 
+}
+
 .philosophy-card-large {
   padding: 80px 60px !important;
   min-height: 400px;
