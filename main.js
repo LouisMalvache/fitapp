@@ -622,8 +622,8 @@ document.addEventListener('DOMContentLoaded', function() {
         initProgramOrSeancePage(muscleWorkouts, showMuscleWorkout); 
     }
     
-    // Page tracker.html (contact.html selon la nav)
-    if (currentPage === 'tracker.html' || currentPage === 'contact.html') {
+    // Page tracker.html (pr.html selon la nav)
+    if (currentPage === 'tracker.html' || currentPage === 'pr.html') {
         initTrackerPage();
     }
 });
