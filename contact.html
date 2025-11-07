@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - FitAPP</title>
+
+  <link rel="icon" type="image/png" href="img/logo.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- CSS personnalisé -->
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <img src="img/logo.png" alt="FitAPP Logo" class="me-2" style="height: 45px;">FitAPP
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill me-1"></i>Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="seance.html"><i class="bi bi-heart-fill me-1"></i>Séances</a></li>
+          <li class="nav-item"><a class="nav-link" href="programmes.html"><i class="bi bi-activity me-1"></i>Programmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="nutrition.html"><i class="bi bi-apple me-1"></i>Nutrition</a></li>
+          <li class="nav-item"><a class="nav-link" href="galerie.html"><i class="bi bi-images me-1"></i>Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="pr.html"><i class="bi bi-award me-1"></i>Mes PR</a></li>
+        </ul>
+        <div class="ms-auto d-flex">
+          <a href="CV_FR.html" class="btn btn-outline-light btn-sm me-2">cv</a>
+          <a href="contact.html" class="btn btn-outline-light btn-sm">contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <h1><i class="bi bi-envelope-heart me-3"></i>Contactez-moi</h1>
+      <p>Une question ? Un conseil ? N'hésitez pas à me contacter !</p>
+    </div>
+  </div>
+
+  <!-- Contact Content -->
+  <div class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Formulaire de contact -->
+      <div class="col-lg-7">
+        <div class="card-custom p-4">
+          <h3 class="section-title mb-4">
+            <i class="bi bi-pencil-square"></i>
+            Envoyez-moi un message
+          </h3>
+          
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label text-light">Nom complet</label>
+              <input type="text" class="form-control contact-input" id="name" placeholder="Votre nom" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label text-light">Email</label>
+              <input type="email" class="form-control contact-input" id="email" placeholder="votre.email@exemple.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="subject" class="form-label text-light">Sujet</label>
+              <select class="form-select contact-input" id="subject" required>
+                <option value="">Choisissez un sujet...</option>
+                <option value="programme">Question sur un programme</option>
+                <option value="nutrition">Conseil nutrition</option>
+                <option value="coaching">Demande de coaching</option>
+                <option value="partenariat">Partenariat</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="form-label text-light">Message</label>
+              <textarea class="form-control contact-input" id="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-capture w-100">
+              <i class="bi bi-send-fill me-2"></i>Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Informations de contact -->
+      <div class="col-lg-5">
+        <div class="card-custom p-4 mb-4">
+          <h3 class="section-title mb-4">
+            <i class="bi bi-info-circle"></i>
+            Informations
+          </h3>
+          
+          <div class="contact-info-item mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-geo-alt-fill contact-icon me-3"></i>
+              <h5 class="mb-0 text-light">Localisation</h5>
+            </div>
+            <p class="p">Amiens, France</p>
+          </div>
+
+          <div class="contact-info-item mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-envelope-fill contact-icon me-3"></i>
+              <h5 class="mb-0 text-light">Email</h5>
+            </div>
+            <p class="p">contact@fitapp.com</p>
+          </div>
+
+          <div class="contact-info-item mb-4">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-clock-fill contact-icon me-3"></i>
+              <h5 class="mb-0 text-light">Disponibilité</h5>
+            </div>
+            <p class="p">Lun - Ven : 9h - 18h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="img/logo.png" alt="FitAPP Logo" class="me-2" style="height: 45px;">
+        <span>FitAPP © 2025</span>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/louis_mvc" class="social-icon me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.tiktok.com/@louis_mvc" class="social-icon me-3"><i class="bi bi-tiktok"></i></a>
+        <a href="https://github.com/LouisMalvache" class="social-icon me-3"><i class="bi bi-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Votre JavaScript personnalisé -->
+<script src="main.js"></script>
+
+</body>
+
+</html>

@@ -605,7 +605,38 @@ function initTrackerPage() {
 }
 
 // ==========================================
-// 6. INITIALISATION AU CHARGEMENT
+// 6. GESTION FORMULAIRE DE CONTACT
+// ==========================================
+function initContactPage() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des valeurs
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Validation simple
+            if (!name || !email || !subject || !message) {
+                alert('Veuillez remplir tous les champs du formulaire.');
+                return;
+            }
+            
+            // Affichage d'un message de confirmation
+            alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.`);
+            
+            // Réinitialisation du formulaire
+            contactForm.reset();
+        });
+    }
+}
+
+// ==========================================
+// 7. INITIALISATION AU CHARGEMENT
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     initActiveNav();
@@ -625,5 +656,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Page tracker.html (pr.html selon la nav)
     if (currentPage === 'tracker.html' || currentPage === 'pr.html') {
         initTrackerPage();
+    }
+    
+    // Page contact.html
+    if (currentPage === 'contact.html') {
+        initContactPage();
     }
 });
