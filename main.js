@@ -663,3 +663,196 @@ document.addEventListener('DOMContentLoaded', function() {
         initContactPage();
     }
 });
+
+
+// ==========================================
+//  MODULE : CRÉATION DE PROGRAMME PERSONNALISÉ
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const selectionMode = document.getElementById("selection-mode");
+    const programMode = document.getElementById("program-mode");
+
+    // Vérifie qu’on est bien sur la page correspondante
+// Vérification des modes avant affichage
+if (!selectionMode || !programMode) return;
+
+// === Dictionnaire complet des exercices par groupe musculaire ===
+const exercisesByMuscle = {
+    "Épaules": [
+        { name: "Développé militaire", image: "img/Le-Developpe-Militaire.gif" },
+        { name: "Élévations frontales", image: "img/elevation-frontale.gif" },
+        { name: "Élévations latérales", image: "img/elevation-laterale.gif" },
+        { name: "Shrugs", image: "img/shrugs-avec-halteres.gif" },
+        { name: "Développé épaules assis", image: "img/developpe-epaules-assis.gif" }
+    ],
+    "Biceps": [
+        { name: "Curl pupitre barre EZ", image: "img/curl-au-pupitre-barre-ez-larry-scott.gif" },
+        { name: "Curl marteau", image: "img/curl-marteau.gif" },
+        { name: "Curl haltères incliné", image: "img/curl-haltere-incline.gif" },
+        { name: "Curl concentration", image: "img/curl-concentre.gif" }
+    ],
+    "Triceps": [
+        { name: "Barre au front", image: "img/barre-front.gif" },
+        { name: "Extension corde haute", image: "img/extension-haute.gif" },
+        { name: "Extension corde arrière", image: "img/extension-verticale-triceps-poulie-basse.gif" },
+        { name: "Dips", image: "img/dips-triceps.gif" },
+        { name: "Pompes", image: "img/pompe-musculation.gif" }
+    ],
+    "Pectoraux": [
+        { name: "Développé couché", image: "img/developpe-couche.gif" },
+        { name: "Écarté incliné", image: "img/dev-incliné.gif" },
+        { name: "Développé incliné haltères", image: "img/developpe-incline-halteres-exercice-musculation.gif" },
+        { name: "Écarté poulie", image: "img/ecarte-poulie.gif" },
+        { name: "Pompes inclinées", image: "img/pompes-incline.gif" },
+        { name: "Pompes déclinées", image: "img/pompe-declinee.gif" },
+        
+    ],
+    "Dos": [
+        { name: "Traction", image: "img/traction-musculation-dos.gif" },
+        { name: "Tirage horizontal", image: "img/tirage-horizontal-poulie.gif" },
+        { name: "Tirage vertical", image: "img/tirage-vertical-poitrine.gif" },
+        { name: "Rowing barre", image: "img/rowing-barre.gif" },
+        { name: "Soulevé de terre", image: "img/souleve-de-terre-avec-deficit.gif" }
+    ],
+    "Abdominaux": [
+        { name: "Relevé de genoux suspendu", image: "img/releve-de-genoux-suspendu-exercice-musculation.gif" },
+        { name: "Planche", image: "img/planche-abdos.gif" },
+        { name: "Crunch", image: "img/crunch.gif" },
+        { name: "Mountain climber", image: "img/mountain-climber.gif" },
+        { name: "Planche inversée", image: "img/planche-inversee.gif" }
+    ],
+    "Jambes": [
+        { name: "Squat", image: "img/squat.gif" },
+        { name: "Presse à cuisses", image: "img/presse-a-cuisses-inclinee.gif" },
+        { name: "Leg extension", image: "img/leg-extension.gif" },
+        { name: "Fentes avant", image: "img/fentes-avant-kettlebell.gif" },
+        { name: "Squat sauté", image: "img/squat-saute.gif" }
+    ]
+};
+
+
+    let customSelectedExercises = [];
+
+    const container = document.getElementById("exercises-container");
+    const counterText = document.getElementById("counter-text");
+    const counterBox = document.getElementById("exercise-counter");
+    const btnValidate = document.getElementById("btn-validate");
+    const btnReset = document.getElementById("btn-reset");
+    const programDetails = document.getElementById("program-details");
+    const programCount = document.getElementById("program-exercise-count");
+    const btnEdit = document.getElementById("btn-edit");
+    const btnResetProgram = document.getElementById("btn-reset-program");
+
+    // === AFFICHAGE DES EXERCICES ===
+    function renderExercises() {
+        container.innerHTML = "";
+        Object.entries(exercisesByMuscle).forEach(([muscle, exercises]) => {
+            const section = document.createElement("section");
+            section.innerHTML = `<h2>${muscle}</h2>`;
+
+            const grid = document.createElement("div");
+            grid.className = "d-flex flex-wrap justify-content-center";
+
+            exercises.forEach(ex => {
+                const selected = customSelectedExercises.some(sel => sel.name === ex.name);
+                const card = document.createElement("div");
+                card.className = `card m-2 p-2 exercise-card ${selected ? "border border-warning" : ""}`;
+                card.style.width = "180px";
+                card.style.cursor = "pointer";
+                card.innerHTML = `
+                    <img src="${ex.image}" class="card-img-top" alt="${ex.name}">
+                    <div class="card-body text-center"><p>${ex.name}</p></div>
+                `;
+                card.addEventListener("click", () => toggleExercise(ex, muscle));
+                grid.appendChild(card);
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
+        });
+    }
+
+    // === SÉLECTION / DÉSÉLECTION ===
+    function toggleExercise(ex, muscle) {
+        const index = customSelectedExercises.findIndex(e => e.name === ex.name);
+        if (index >= 0) {
+            customSelectedExercises.splice(index, 1);
+        } else {
+            customSelectedExercises.push({ ...ex, muscle });
+        }
+        updateUI();
+    }
+
+    // === MISE À JOUR DE L'INTERFACE ===
+    function updateUI() {
+        counterText.textContent = `${customSelectedExercises.length} exercice${customSelectedExercises.length > 1 ? "s" : ""} sélectionné${customSelectedExercises.length > 1 ? "s" : ""}`;
+        counterBox.style.display = customSelectedExercises.length ? "block" : "none";
+        btnReset.style.display = customSelectedExercises.length ? "inline-block" : "none";
+        btnValidate.disabled = customSelectedExercises.length === 0;
+        btnValidate.style.opacity = customSelectedExercises.length === 0 ? "0.5" : "1";
+        renderExercises();
+    }
+
+    // === GÉNÉRATION DU PROGRAMME FINAL ===
+    function renderProgram() {
+        programDetails.innerHTML = "";
+        const grouped = customSelectedExercises.reduce((acc, ex) => {
+            if (!acc[ex.muscle]) acc[ex.muscle] = [];
+            acc[ex.muscle].push(ex);
+            return acc;
+        }, {});
+
+        Object.entries(grouped).forEach(([muscle, exercises]) => {
+            const div = document.createElement("div");
+            div.className = "mb-4";
+            div.innerHTML = `<h3 class="text-warning">${muscle}</h3>`;
+
+            exercises.forEach(ex => {
+                const item = document.createElement("div");
+                item.className = "d-flex align-items-center mb-2 bg-dark p-2 rounded";
+                item.innerHTML = `
+                    <img src="${ex.image}" width="80" class="me-3 rounded">
+                    <div><strong>${ex.name}</strong><br><small>3-4 séries de 8-12 reps</small></div>
+                    <button class="btn btn-sm btn-outline-danger ms-auto"><i class="fas fa-trash"></i></button>
+                `;
+                item.querySelector("button").addEventListener("click", () => {
+                    customSelectedExercises = customSelectedExercises.filter(e => e.name !== ex.name);
+                    renderProgram();
+                });
+                div.appendChild(item);
+            });
+            programDetails.appendChild(div);
+        });
+    }
+
+    // === VALIDATION DU PROGRAMME ===
+    btnValidate.addEventListener("click", () => {
+        if (customSelectedExercises.length === 0) return;
+        selectionMode.style.display = "none";
+        programMode.style.display = "block";
+        programCount.textContent = `Programme créé avec ${customSelectedExercises.length} exercice${customSelectedExercises.length > 1 ? "s" : ""}`;
+        renderProgram();
+    });
+
+    // === RÉINITIALISATION ===
+    btnReset.addEventListener("click", resetAll);
+    btnResetProgram.addEventListener("click", resetAll);
+
+    function resetAll() {
+        if (confirm("Supprimer toutes les sélections ?")) {
+            customSelectedExercises = [];
+            selectionMode.style.display = "block";
+            programMode.style.display = "none";
+            updateUI();
+        }
+    }
+
+    // === MODIFICATION DU PROGRAMME ===
+    btnEdit.addEventListener("click", () => {
+        selectionMode.style.display = "block";
+        programMode.style.display = "none";
+        updateUI();
+    });
+
+    renderExercises();
+});

@@ -65,7 +65,7 @@
 html { height: 100%; }
 
 /*couleur texte (p)*/
-.p {
+p {
     color: aliceblue;
 }
 /*style du body*/
@@ -769,4 +769,75 @@ body {
         height: 3px;
     }
 }
+}
+
+
+
+/* === BOUTON Créer Mon Programme Perso === */
+.btn-custom-program {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 28px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-custom-program:hover {
+    background: linear-gradient(90deg, #ff8533, #ff4500);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(255, 102, 0, 0.5);
+    color: #fff;
+}
+
+/* Optionnel : effet "pulse" léger pour attirer l'attention */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.8); }
+}
+
+.btn-custom-program.glow {
+    animation: glowPulse 2s infinite;
+}
+
+
+/* Uniformiser la taille des cartes d'exercice */
+#exercises-container .exercise-card {
+  width: 200px;              /* largeur fixe */
+  height: 250px;             /* hauteur fixe */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #1c1c1c; /* couleur d'arrière-plan si besoin */
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+#exercises-container .exercise-card:hover {
+  transform: scale(1.05);
+}
+
+/* Centrer les images dans les cartes */
+#exercises-container .exercise-card img {
+  max-width: 100%;
+  height: 130px;
+  object-fit: contain; /* garde les proportions */
+  display: block;
+  margin: 0 auto;      /* centre l'image */
+}
+
+/* Texte sous les images */
+#exercises-container .exercise-card p {
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
 }
