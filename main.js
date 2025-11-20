@@ -25,6 +25,9 @@ function scrollToElement(element) {
 // 2. DONNÉES DES EXERCICES (Images)
 // ==========================================
 const exerciseImages = {
+    // avant-bras
+    "avants bras assis": "img/avant bras 1.gif",
+    "avants bras debout": "img/avant bras 2.gif",
     // Épaules
     "Développé militaire": "img/Le-Developpe-Militaire.gif", 
     "Élévations frontales": "img/elevation-frontale.gif",
@@ -36,6 +39,7 @@ const exerciseImages = {
     "Curl marteau": "img/curl-marteau.gif",
     "Curl haltères incliné": "img/curl-haltere-incline.gif", 
     "Curl concentration": "img/curl-concentre.gif",
+    "Curl pupitre machine":"img/curl-pupitre-machine.gif",
     // Triceps
     "Barre au front": "img/barre-front.gif", 
     "Extension corde haute": "img/extension-haute.gif",
@@ -81,8 +85,10 @@ const programs = {
     description: "Ta sélection améliorée avec tous les groupes musculaires", 
     sessions: [
         { day: "Full Body Complet", muscle: "Corps Complet", exercises: [
-            { name: "Curl pupitre barre EZ ", sets: "3×8 rep" },
+            { name: "Curl pupitre machine", sets: "3×8 rep" },
             { name: "Curl haltères incliné", sets: "3×8 rep" },
+            { name: "avant bras assis", sets: "3×8 rep" },
+            { name: "avant bras debout", sets: "3×8 rep" },
             { name: "Extension corde haute", sets: "3×8 rep" },
             { name: "Extension corde arriere", sets: "3×8 rep" },
             { name: "Développé incliné haltères", sets: "3×8 rep" },
@@ -112,7 +118,8 @@ const programs = {
                 { name: "Développé couché", sets: "4×8 rep" }, 
                 { name: "Tirage horizontal", sets: "4×8 rep" }, 
                 { name: "Développé militaire", sets: "3×10 rep" }, 
-                { name: "Curl pupitre barre EZ ", sets: "3×10 rep" }, 
+                { name: "Curl pupitre barre EZ ", sets: "3×10 rep" },
+                { name: "avants bras assis", sets: "3×10 rep" }, 
                 { name: "Extension corde haute", sets: "3×10 rep" }, 
                 { name: "extension lombaires", sets: "3×10 rep" },
                 { name: "Planche", sets: "2 min" }
@@ -123,6 +130,7 @@ const programs = {
                 { name: "Tirage vertical", sets: "4×8 rep" }, 
                 { name: "Élévations frontales", sets: "3×10 rep" }, 
                 { name: "Curl marteau", sets: "3×10 rep" }, 
+                { name: "avants bras debout", sets: "3×10 rep" },
                 { name: "extension lombaires", sets: "3×10 rep" },
                 { name: "Pompes", sets: "3×max" }, 
                 { name: "Planche", sets: "2 min" }
@@ -148,7 +156,7 @@ const programs = {
                 { name: "Tirage horizontal", sets: "4×8 rep" }, 
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Shrugs", sets: "3×10 rep" }, 
-                { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
+                { name: "Curl pupitre machine ", sets: "4×8 rep" }, 
                 { name: "Curl marteau", sets: "3×8 rep" }
             ]},
             { day: "Jour 3 - Legs", muscle: "Jambes", exercises: [
@@ -171,7 +179,7 @@ const programs = {
                 { name: "Développé militaire", sets: "3×8 rep" }, 
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Écarté poulie", sets: "3×8 rep" }, 
-                { name: "Curl pupitre barre EZ ", sets: "3×8 rep" }, 
+                { name: "Curl pupitre machine ", sets: "3×8 rep" }, 
                 { name: "Extension corde haute", sets: "3×8 rep" }
             ]},
             { day: "Jour 2 - Lower A", muscle: "Bas du corps", exercises: [
@@ -187,6 +195,7 @@ const programs = {
                 { name: "Élévations latérales", sets: "3×8 rep" }, 
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Écarté poulie", sets: "3×8 rep" }, 
+                { name: "avant bras assis", sets: "3×8 rep" },
                 { name: "Curl marteau", sets: "3×8 rep" }, 
                 { name: "Dips", sets: "3×8 rep" },
                 { name: "extension lombaires", sets: "3×10 rep"}
@@ -233,9 +242,11 @@ const programs = {
                 { name: "leg-curl-allonge", sets: "3×10 rep" }
             ]},
             { day: "Jour 5 - Bras/Abdos", muscle: "Bras & Abdos", exercises: [
-                { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
+                { name: "Curl pupitre machine ", sets: "4×8 rep" }, 
                 { name: "Barre au front", sets: "4×8 rep" }, 
                 { name: "Curl haltères incliné", sets: "3×8 rep" }, 
+                { name: "avants bras assis", sets: "3×8 rep" },
+                { name: "Extension corde haute", sets: "3×8 rep" },
                 { name: "Dips", sets: "3×8 rep" }, 
                 { name: "Planche", sets: "2 min" }
             ]}
@@ -252,6 +263,7 @@ const muscleWorkouts = {
         sessions: [
             { day: "Biceps", muscle: "Biceps", exercises: [
                 { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
+                { name: "Curl pupitre machine ", sets: "4×8 rep" },
                 { name: "Curl marteau", sets: "3×8 rep" }, 
                 { name: "Curl haltères incliné", sets: "3×8 rep" }, 
                 { name: "Curl concentration", sets: "3×8 rep" }
@@ -261,7 +273,12 @@ const muscleWorkouts = {
                 { name: "Extension corde haute", sets: "3×8 rep" }, 
                 { name: "Extension corde arriere", sets: "3×8 rep" }, 
                 { name: "Dips", sets: "3×8 rep" }
-            ]}
+            ]},
+            { day: "Avant-bras", muscle: "Avant-bras", exercises: [
+                { name: "avants bras assis", sets: "4×10 rep" },
+                { name: "avants bras debout", sets: "4×10 rep" }
+
+        ]}
         ]
     },
     "3days": { 
@@ -701,6 +718,7 @@ const exercisesByMuscle = {
     ],
     "Biceps": [
         { name: "Curl pupitre barre EZ", image: "img/curl-au-pupitre-barre-ez-larry-scott.gif" },
+        { name: "Curl pupitre machine", image: "img/curl-pupitre-machine.gif" },
         { name: "Curl marteau", image: "img/curl-marteau.gif" },
         { name: "Curl haltères incliné", image: "img/curl-haltere-incline.gif" },
         { name: "Curl concentration", image: "img/curl-concentre.gif" }
@@ -711,6 +729,10 @@ const exercisesByMuscle = {
         { name: "Extension corde arrière", image: "img/extension-verticale-triceps-poulie-basse.gif" },
         { name: "Dips", image: "img/dips-triceps.gif" },
         { name: "Pompes", image: "img/pompe-musculation.gif" }
+    ],
+    "Avant-bras": [
+        { name: "Avant-bras assis", image: "img/avant bras 1.gif" },
+        { name: "Avant-bras debout", image: "img/avant bras 2.gif" }
     ],
     "Pectoraux": [
         { name: "Développé couché", image: "img/developpe-couche.gif" },
