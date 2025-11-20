@@ -56,6 +56,7 @@ const exerciseImages = {
     "Tirage vertical": "img/tirage-vertical-poitrine.gif", 
     "Rowing barre": "img/rowing-barre.gif",
     "Soulevé de terre": "img/souleve-de-terre-avec-deficit.gif",
+    "extension lombaires":"img/extension-lombaires.gif",
     // Abdominaux
     "Relevé de genoux suspendu": "img/releve-de-genoux-suspendu-exercice-musculation.gif", 
     "Planche": "img/planche-abdos.gif",
@@ -67,7 +68,8 @@ const exerciseImages = {
     "Presse à cuisses": "img/presse-a-cuisses-inclinee.gif",
     "Leg extension": "img/leg-extension.gif", 
     "Fentes avant": "img/fentes-avant-kettlebell.gif",
-    "squat-saute": "img/squat-saute.gif"
+    "squat-saute": "img/squat-saute.gif",
+    "leg-curl-allonge":"img/leg-curl-allonge.gif"
 };
 
 // ==========================================
@@ -88,9 +90,11 @@ const programs = {
             { name: "Élévations latérales", sets: "3×10 rep" },
             { name: "Presse à cuisses", sets: "3×8 rep" },
             { name: "Leg extension", sets: "3×10 rep" },
+            { name: "leg-curl-allonge", sets: "3×10 rep" },
             { name: "Squat", sets: "4×8 rep" },
             { name: "Tirage horizontal", sets: "3×8 rep" },
             { name: "Tirage vertical", sets: "3×8 rep" },
+            { name: "extension lombaires", sets: "3×10 rep" },
             { name: "Soulevé de terre", sets: "4×6 rep" },
             { name: "Développé couché", sets: "4×8 rep" },
             { name: "Développé militaire", sets: "3×10 rep" },
@@ -110,6 +114,7 @@ const programs = {
                 { name: "Développé militaire", sets: "3×10 rep" }, 
                 { name: "Curl pupitre barre EZ ", sets: "3×10 rep" }, 
                 { name: "Extension corde haute", sets: "3×10 rep" }, 
+                { name: "extension lombaires", sets: "3×10 rep" },
                 { name: "Planche", sets: "2 min" }
             ]},
             { day: "Jour 2 - Full Body B", muscle: "Corps Complet", exercises: [
@@ -118,6 +123,7 @@ const programs = {
                 { name: "Tirage vertical", sets: "4×8 rep" }, 
                 { name: "Élévations frontales", sets: "3×10 rep" }, 
                 { name: "Curl marteau", sets: "3×10 rep" }, 
+                { name: "extension lombaires", sets: "3×10 rep" },
                 { name: "Pompes", sets: "3×max" }, 
                 { name: "Planche", sets: "2 min" }
             ]}
@@ -150,6 +156,7 @@ const programs = {
                 { name: "Presse à cuisses", sets: "4×8 rep" }, 
                 { name: "Leg extension", sets: "3×8 rep" }, 
                 { name: "Fentes avant", sets: "3×8 rep" }, 
+                { name: "leg-curl-allonge", sets: "3×10 rep" },
                 { name: "Planche", sets: "2 min" }
             ]}
         ]
@@ -172,6 +179,7 @@ const programs = {
                 { name: "Soulevé de terre", sets: "4×6 rep" }, 
                 { name: "Presse à cuisses", sets: "4×8 rep" }, 
                 { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "leg-curl-allonge", sets: "3×10 rep" },
                 { name: "Planche", sets: "2 min" }
             ]},
             { day: "Jour 3 - Upper B", muscle: "Haut du corps", exercises: [
@@ -180,13 +188,15 @@ const programs = {
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Écarté poulie", sets: "3×8 rep" }, 
                 { name: "Curl marteau", sets: "3×8 rep" }, 
-                { name: "Dips", sets: "3×8 rep" }
+                { name: "Dips", sets: "3×8 rep" },
+                { name: "extension lombaires", sets: "3×10 rep"}
             ]},
             { day: "Jour 4 - Lower B", muscle: "Bas du corps", exercises: [
                 { name: "Squat", sets: "4×8 rep" }, 
                 { name: "Soulevé de terre", sets: "4×6 rep" }, 
                 { name: "Presse à cuisses", sets: "4×8 rep" }, 
                 { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "leg-curl-allonge", sets: "3×10 rep" },
                 { name: "Planche", sets: "2 min" }
             ]}
         ]
@@ -207,7 +217,8 @@ const programs = {
                 { name: "Traction", sets: "4×max" }, 
                 { name: "Tirage vertical", sets: "4×8 rep" }, 
                 { name: "Rowing barre", sets: "3×8 rep" }, 
-                { name: "Tirage horizontal", sets: "3×8 rep" }
+                { name: "Tirage horizontal", sets: "3×8 rep" },
+                { name: "extension lombaires", sets: "3×10 rep" }
             ]},
             { day: "Jour 3 - Épaules", muscle: "Épaules", exercises: [
                 { name: "Développé militaire", sets: "4×8 rep" }, 
@@ -218,7 +229,8 @@ const programs = {
             { day: "Jour 4 - Jambes", muscle: "Jambes", exercises: [
                 { name: "Squat", sets: "4×6 rep" }, 
                 { name: "Presse à cuisses", sets: "4×8 rep" }, 
-                { name: "Leg extension", sets: "4×8 rep" }
+                { name: "Leg extension", sets: "4×8 rep" },
+                { name: "leg-curl-allonge", sets: "3×10 rep" }
             ]},
             { day: "Jour 5 - Bras/Abdos", muscle: "Bras & Abdos", exercises: [
                 { name: "Curl pupitre barre EZ ", sets: "4×8 rep" }, 
@@ -279,7 +291,8 @@ const muscleWorkouts = {
                 { name: "Rowing barre", sets: "4×8 rep" }, 
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Tirage horizontal", sets: "3×8 rep" }, 
-                { name: "Shrugs", sets: "3×10 rep" }
+                { name: "Shrugs", sets: "3×10 rep" },
+                { name: "extension lombaires", sets: "3×10 rep" }
             ]}
         ]
     },
@@ -290,7 +303,8 @@ const muscleWorkouts = {
                 { name: "Squat", sets: "4×8 rep" }, 
                 { name: "Presse à cuisses", sets: "4×8 rep" }, 
                 { name: "Leg extension", sets: "3×8 rep" }, 
-                { name: "Fentes avant", sets: "3×10 rep" }
+                { name: "Fentes avant", sets: "3×10 rep" },
+                { name: "leg-curl-allonge", sets: "3×10 rep" }
             ]}
         ]
     },
@@ -712,7 +726,8 @@ const exercisesByMuscle = {
         { name: "Tirage horizontal", image: "img/tirage-horizontal-poulie.gif" },
         { name: "Tirage vertical", image: "img/tirage-vertical-poitrine.gif" },
         { name: "Rowing barre", image: "img/rowing-barre.gif" },
-        { name: "Soulevé de terre", image: "img/souleve-de-terre-avec-deficit.gif" }
+        { name: "Soulevé de terre", image: "img/souleve-de-terre-avec-deficit.gif" },
+        { name: "extension lombaires", image: "img/extension-lombaires.gif" }
     ],
     "Abdominaux": [
         { name: "Relevé de genoux suspendu", image: "img/releve-de-genoux-suspendu-exercice-musculation.gif" },
@@ -725,8 +740,10 @@ const exercisesByMuscle = {
         { name: "Squat", image: "img/squat.gif" },
         { name: "Presse à cuisses", image: "img/presse-a-cuisses-inclinee.gif" },
         { name: "Leg extension", image: "img/leg-extension.gif" },
+        { name: "leg-curl-allonge", image: "img/leg-curl-allonge.gif" },
         { name: "Fentes avant", image: "img/fentes-avant-kettlebell.gif" },
         { name: "Squat sauté", image: "img/squat-saute.gif" }
+        
     ]
 };
 
