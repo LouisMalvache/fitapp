@@ -703,72 +703,69 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectionMode = document.getElementById("selection-mode");
     const programMode = document.getElementById("program-mode");
 
-    // Vérifie qu’on est bien sur la page correspondante
-// Vérification des modes avant affichage
-if (!selectionMode || !programMode) return;
+    // Vérifie qu'on est bien sur la page correspondante
+    // Vérification des modes avant affichage
+    if (!selectionMode || !programMode) return;
 
-// === Dictionnaire complet des exercices par groupe musculaire ===
-const exercisesByMuscle = {
-    "Épaules": [
-        { name: "Développé militaire", image: "img/Le-Developpe-Militaire.gif" },
-        { name: "Élévations frontales", image: "img/elevation-frontale.gif" },
-        { name: "Élévations latérales", image: "img/elevation-laterale.gif" },
-        { name: "Shrugs", image: "img/shrugs-avec-halteres.gif" },
-        { name: "Développé épaules assis", image: "img/developpe-epaules-assis.gif" }
-    ],
-    "Biceps": [
-        { name: "Curl pupitre barre EZ", image: "img/curl-au-pupitre-barre-ez-larry-scott.gif" },
-        { name: "Curl pupitre machine", image: "img/curl-pupitre-machine.gif" },
-        { name: "Curl marteau", image: "img/curl-marteau.gif" },
-        { name: "Curl haltères incliné", image: "img/curl-haltere-incline.gif" },
-        { name: "Curl concentration", image: "img/curl-concentre.gif" }
-    ],
-    "Triceps": [
-        { name: "Barre au front", image: "img/barre-front.gif" },
-        { name: "Extension corde haute", image: "img/extension-haute.gif" },
-        { name: "Extension corde arrière", image: "img/extension-verticale-triceps-poulie-basse.gif" },
-        { name: "Dips", image: "img/dips-triceps.gif" },
-        { name: "Pompes", image: "img/pompe-musculation.gif" }
-    ],
-    "Avant-bras": [
-        { name: "Avant-bras assis", image: "img/avant bras 1.gif" },
-        { name: "Avant-bras debout", image: "img/avant bras 2.gif" }
-    ],
-    "Pectoraux": [
-        { name: "Développé couché", image: "img/developpe-couche.gif" },
-        { name: "Écarté incliné", image: "img/dev-incliné.gif" },
-        { name: "Développé incliné haltères", image: "img/developpe-incline-halteres-exercice-musculation.gif" },
-        { name: "Écarté poulie", image: "img/ecarte-poulie.gif" },
-        { name: "Pompes inclinées", image: "img/pompes-incline.gif" },
-        { name: "Pompes déclinées", image: "img/pompe-declinee.gif" },
-        
-    ],
-    "Dos": [
-        { name: "Traction", image: "img/traction-musculation-dos.gif" },
-        { name: "Tirage horizontal", image: "img/tirage-horizontal-poulie.gif" },
-        { name: "Tirage vertical", image: "img/tirage-vertical-poitrine.gif" },
-        { name: "Rowing barre", image: "img/rowing-barre.gif" },
-        { name: "Soulevé de terre", image: "img/souleve-de-terre-avec-deficit.gif" },
-        { name: "extension lombaires", image: "img/extension-lombaires.gif" }
-    ],
-    "Abdominaux": [
-        { name: "Relevé de genoux suspendu", image: "img/releve-de-genoux-suspendu-exercice-musculation.gif" },
-        { name: "Planche", image: "img/planche-abdos.gif" },
-        { name: "Crunch", image: "img/crunch.gif" },
-        { name: "Mountain climber", image: "img/mountain-climber.gif" },
-        { name: "Planche inversée", image: "img/planche-inversee.gif" }
-    ],
-    "Jambes": [
-        { name: "Squat", image: "img/squat.gif" },
-        { name: "Presse à cuisses", image: "img/presse-a-cuisses-inclinee.gif" },
-        { name: "Leg extension", image: "img/leg-extension.gif" },
-        { name: "leg-curl-allonge", image: "img/leg-curl-allonge.gif" },
-        { name: "Fentes avant", image: "img/fentes-avant-kettlebell.gif" },
-        { name: "Squat sauté", image: "img/squat-saute.gif" }
-        
-    ]
-};
-
+    // === Dictionnaire complet des exercices par groupe musculaire ===
+    const exercisesByMuscle = {
+        "Épaules": [
+            { name: "Développé militaire", image: "img/Le-Developpe-Militaire.gif" },
+            { name: "Élévations frontales", image: "img/elevation-frontale.gif" },
+            { name: "Élévations latérales", image: "img/elevation-laterale.gif" },
+            { name: "Shrugs", image: "img/shrugs-avec-halteres.gif" },
+            { name: "Développé épaules assis", image: "img/developpe-epaules-assis.gif" }
+        ],
+        "Biceps": [
+            { name: "Curl pupitre barre EZ", image: "img/curl-au-pupitre-barre-ez-larry-scott.gif" },
+            { name: "Curl pupitre machine", image: "img/curl-pupitre-machine.gif" },
+            { name: "Curl marteau", image: "img/curl-marteau.gif" },
+            { name: "Curl haltères incliné", image: "img/curl-haltere-incline.gif" },
+            { name: "Curl concentration", image: "img/curl-concentre.gif" }
+        ],
+        "Triceps": [
+            { name: "Barre au front", image: "img/barre-front.gif" },
+            { name: "Extension corde haute", image: "img/extension-haute.gif" },
+            { name: "Extension corde arrière", image: "img/extension-verticale-triceps-poulie-basse.gif" },
+            { name: "Dips", image: "img/dips-triceps.gif" },
+            { name: "Pompes", image: "img/pompe-musculation.gif" }
+        ],
+        "Avant-bras": [
+            { name: "Avant-bras assis", image: "img/avant bras 1.gif" },
+            { name: "Avant-bras debout", image: "img/avant bras 2.gif" }
+        ],
+        "Pectoraux": [
+            { name: "Développé couché", image: "img/developpe-couche.gif" },
+            { name: "Écarté incliné", image: "img/dev-incliné.gif" },
+            { name: "Développé incliné haltères", image: "img/developpe-incline-halteres-exercice-musculation.gif" },
+            { name: "Écarté poulie", image: "img/ecarte-poulie.gif" },
+            { name: "Pompes inclinées", image: "img/pompes-incline.gif" },
+            { name: "Pompes déclinées", image: "img/pompe-declinee.gif" }
+        ],
+        "Dos": [
+            { name: "Traction", image: "img/traction-musculation-dos.gif" },
+            { name: "Tirage horizontal", image: "img/tirage-horizontal-poulie.gif" },
+            { name: "Tirage vertical", image: "img/tirage-vertical-poitrine.gif" },
+            { name: "Rowing barre", image: "img/rowing-barre.gif" },
+            { name: "Soulevé de terre", image: "img/souleve-de-terre-avec-deficit.gif" },
+            { name: "extension lombaires", image: "img/extension-lombaires.gif" }
+        ],
+        "Abdominaux": [
+            { name: "Relevé de genoux suspendu", image: "img/releve-de-genoux-suspendu-exercice-musculation.gif" },
+            { name: "Planche", image: "img/planche-abdos.gif" },
+            { name: "Crunch", image: "img/crunch.gif" },
+            { name: "Mountain climber", image: "img/mountain-climber.gif" },
+            { name: "Planche inversée", image: "img/planche-inversee.gif" }
+        ],
+        "Jambes": [
+            { name: "Squat", image: "img/squat.gif" },
+            { name: "Presse à cuisses", image: "img/presse-a-cuisses-inclinee.gif" },
+            { name: "Leg extension", image: "img/leg-extension.gif" },
+            { name: "leg-curl-allonge", image: "img/leg-curl-allonge.gif" },
+            { name: "Fentes avant", image: "img/fentes-avant-kettlebell.gif" },
+            { name: "Squat sauté", image: "img/squat-saute.gif" }
+        ]
+    };
 
     let customSelectedExercises = [];
 
@@ -841,17 +838,34 @@ const exercisesByMuscle = {
             return acc;
         }, {});
 
+        // Liste des exercices basés sur la durée
+        const durationExercises = [
+            "Planche",
+            "Planche inversée",
+            "Mountain climber"
+        ];
+
         Object.entries(grouped).forEach(([muscle, exercises]) => {
             const div = document.createElement("div");
             div.className = "mb-4";
             div.innerHTML = `<h3 class="text-warning">${muscle}</h3>`;
 
             exercises.forEach(ex => {
+                // Détermine si c'est un exercice basé sur la durée
+                const isDuration = durationExercises.some(name => 
+                    ex.name.toLowerCase().includes(name.toLowerCase())
+                );
+                
+                // Affichage adapté selon le type d'exercice
+                const repsInfo = isDuration 
+                    ? "2-3 séries de 30-60 secondes" 
+                    : "3-4 séries de 8-12 reps";
+
                 const item = document.createElement("div");
                 item.className = "d-flex align-items-center mb-2 bg-dark p-2 rounded";
                 item.innerHTML = `
                     <img src="${ex.image}" width="80" class="me-3 rounded">
-                    <div><strong>${ex.name}</strong><br><small>3-4 séries de 8-12 reps</small></div>
+                    <div><strong>${ex.name}</strong><br><small>${repsInfo}</small></div>
                     <button class="btn btn-sm btn-outline-danger ms-auto"><i class="fas fa-trash"></i></button>
                 `;
                 item.querySelector("button").addEventListener("click", () => {
