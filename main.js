@@ -39,7 +39,7 @@ const exerciseImages = {
     "Curl marteau": "img/curl-marteau.gif",
     "Curl haltères incliné": "img/curl-haltere-incline.gif", 
     "Curl concentration": "img/curl-concentre.gif",
-    "Curl pupitre machine":"img/curl-pupitre-machine.gif",
+    "Curl pupitre machine ":"img/curl-pupitre-machine.gif",
     // Triceps
     "Barre au front": "img/barre-front.gif", 
     "Extension corde haute": "img/extension-haute.gif",
@@ -718,7 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
         "Biceps": [
             { name: "Curl pupitre barre EZ", image: "img/curl-au-pupitre-barre-ez-larry-scott.gif" },
-            { name: "Curl pupitre machine", image: "img/curl-pupitre-machine.gif" },
+            { name: "Curl pupitre machine ", image: "img/curl-pupitre-machine.gif" },
             { name: "Curl marteau", image: "img/curl-marteau.gif" },
             { name: "Curl haltères incliné", image: "img/curl-haltere-incline.gif" },
             { name: "Curl concentration", image: "img/curl-concentre.gif" }
