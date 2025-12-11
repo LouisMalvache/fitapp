@@ -26,8 +26,8 @@ function scrollToElement(element) {
 // ==========================================
 const exerciseImages = {
     // avant-bras
-    "avants bras assis": "img/avant bras 1.gif",
-    "avants bras debout": "img/avant bras 2.gif",
+    "avant bras assis": "img/avant bras 1.gif",
+    "avant bras debout": "img/avant bras 2.gif",
     // Épaules
     "Développé militaire": "img/Le-Developpe-Militaire.gif", 
     "Élévations frontales": "img/elevation-frontale.gif",
@@ -85,7 +85,7 @@ const programs = {
     description: "Ta sélection améliorée avec tous les groupes musculaires", 
     sessions: [
         { day: "Full Body Complet", muscle: "Corps Complet", exercises: [
-            { name: "Curl pupitre machine", sets: "3×8 rep" },
+            { name: "Curl pupitre machine ", sets: "3×8 rep" },
             { name: "Curl haltères incliné", sets: "3×8 rep" },
             { name: "avant bras assis", sets: "3×8 rep" },
             { name: "avant bras debout", sets: "3×8 rep" },
