@@ -85,12 +85,9 @@ const programs = {
     description: "Ta sélection améliorée avec tous les groupes musculaires", 
     sessions: [
         { day: "Full Body Complet", muscle: "Corps Complet", exercises: [
-            { name: "Curl pupitre machine ", sets: "3×8 rep" },
             { name: "Curl haltères incliné", sets: "3×8 rep" },
-            { name: "avant bras assis", sets: "3×8 rep" },
             { name: "avant bras debout", sets: "3×8 rep" },
             { name: "Extension corde haute", sets: "3×8 rep" },
-            { name: "Extension corde arriere", sets: "3×8 rep" },
             { name: "Développé incliné haltères", sets: "3×8 rep" },
             { name: "Écarté poulie", sets: "3×8 rep" },
             { name: "Élévations latérales", sets: "3×10 rep" },
@@ -100,10 +97,8 @@ const programs = {
             { name: "Squat", sets: "4×8 rep" },
             { name: "Tirage horizontal", sets: "3×8 rep" },
             { name: "Tirage vertical", sets: "3×8 rep" },
-            { name: "extension lombaires", sets: "3×10 rep" },
             { name: "Soulevé de terre", sets: "4×6 rep" },
             { name: "Développé couché", sets: "4×8 rep" },
-            { name: "Développé militaire", sets: "3×10 rep" },
             { name: "Planche", sets: "2 min" }
         ]}
     ]
@@ -114,23 +109,23 @@ const programs = {
         description: "Deux séances complètes pour travailler tout le corps", 
         sessions: [
             { day: "Jour 1 - Full Body A", muscle: "Corps Complet", exercises: [
-                { name: "Squat", sets: "4×8 rep" }, 
                 { name: "Développé couché", sets: "4×8 rep" }, 
+                { name: "Squat", sets: "4×8 rep" }, 
                 { name: "Tirage horizontal", sets: "4×8 rep" }, 
-                { name: "Développé militaire", sets: "3×10 rep" }, 
-                { name: "Curl pupitre barre EZ ", sets: "3×10 rep" },
-                { name: "avants bras assis", sets: "3×10 rep" }, 
+                { name: "Écarté poulie", sets: "3×10 rep" },
+                { name: "Curl marteau", sets: "3×10 rep" },
+                { name: "avant bras assis", sets: "3×10 rep" }, 
                 { name: "Extension corde haute", sets: "3×10 rep" }, 
                 { name: "extension lombaires", sets: "3×10 rep" },
                 { name: "Planche", sets: "2 min" }
             ]},
             { day: "Jour 2 - Full Body B", muscle: "Corps Complet", exercises: [
                 { name: "Soulevé de terre", sets: "4×6 rep" }, 
-                { name: "Écarté incliné", sets: "4×8 rep" }, 
+                { name: "Développé incliné haltères", sets: "4×8 rep" },
                 { name: "Tirage vertical", sets: "4×8 rep" }, 
                 { name: "Élévations frontales", sets: "3×10 rep" }, 
-                { name: "Curl marteau", sets: "3×10 rep" }, 
-                { name: "avants bras debout", sets: "3×10 rep" },
+                { name: "Curl haltères incliné", sets: "3×10 rep" },
+                { name: "avant bras debout", sets: "3×10 rep" },
                 { name: "extension lombaires", sets: "3×10 rep" },
                 { name: "Pompes", sets: "3×max" }, 
                 { name: "Planche", sets: "2 min" }
@@ -145,28 +140,28 @@ const programs = {
                 { name: "Développé couché", sets: "4×8 rep" }, 
                 { name: "Développé incliné haltères", sets: "4×8 rep" }, 
                 { name: "Écarté poulie", sets: "3×10 rep" }, 
-                { name: "Développé militaire", sets: "4×8 rep" }, 
+                { name: "Curl marteau", sets: "3×8 rep" },
                 { name: "Élévations latérales", sets: "3×10 rep" }, 
-                { name: "Barre au front", sets: "3×8 rep" }, 
-                { name: "Extension corde arriere", sets: "3×8 rep" }
+                { name: "Extension corde haute", sets: "3×8 rep" }, 
+                { name: "Tirage horizontal", sets: "3×8 rep" }
             ]},
-            { day: "Jour 2 - Pull", muscle: "Traction", exercises: [
+            { day: "Jour 2 - Legs", muscle: "Jambes", exercises: [
+                { name: "Squat", sets: "4×8 rep" }, 
+                { name: "Presse à cuisses", sets: "4×8 rep" }, 
+                { name: "Leg extension", sets: "3×8 rep" }, 
+                { name: "leg-curl-allonge", sets: "3×10 rep" },
+                { name: "Planche", sets: "2 min" }
+            ]},
+            { day: "Jour 3 - Pull", muscle: "Traction", exercises: [
                 { name: "Soulevé de terre", sets: "4×6 rep" }, 
                 { name: "Traction", sets: "3×8 rep" }, 
                 { name: "Tirage horizontal", sets: "4×8 rep" }, 
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Shrugs", sets: "3×10 rep" }, 
-                { name: "Curl pupitre machine ", sets: "4×8 rep" }, 
-                { name: "Curl marteau", sets: "3×8 rep" }
-            ]},
-            { day: "Jour 3 - Legs", muscle: "Jambes", exercises: [
-                { name: "Squat", sets: "4×8 rep" }, 
-                { name: "Presse à cuisses", sets: "4×8 rep" }, 
-                { name: "Leg extension", sets: "3×8 rep" }, 
-                { name: "Fentes avant", sets: "3×8 rep" }, 
-                { name: "leg-curl-allonge", sets: "3×10 rep" },
-                { name: "Planche", sets: "2 min" }
+                { name: "Curl marteau", sets: "4×8 rep" }, 
+                { name: "Extension corde haute", sets: "3×8 rep" }
             ]}
+            
         ]
     },
     "4days": { 
@@ -176,10 +171,10 @@ const programs = {
             { day: "Jour 1 - Upper A", muscle: "Haut du corps", exercises: [
                 { name: "Développé couché", sets: "4×8 rep" }, 
                 { name: "Tirage horizontal", sets: "4×8 rep" }, 
-                { name: "Développé militaire", sets: "3×8 rep" }, 
+                { name: "Développé incliné haltères", sets: "3×8 rep" },
                 { name: "Tirage vertical", sets: "3×8 rep" }, 
                 { name: "Écarté poulie", sets: "3×8 rep" }, 
-                { name: "Curl pupitre machine ", sets: "3×8 rep" }, 
+                { name: "Curl marteau", sets: "3×8 rep" }, 
                 { name: "Extension corde haute", sets: "3×8 rep" }
             ]},
             { day: "Jour 2 - Lower A", muscle: "Bas du corps", exercises: [
