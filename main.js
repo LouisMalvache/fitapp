@@ -77,176 +77,273 @@ const exerciseImages = {
 };
 
 // ==========================================
-// 3. DONNÉES DES PROGRAMMES
+// PROGRAMMES D'ENTRAÎNEMENT OPTIMISÉS
 // ==========================================
+
 const programs = {
 "full body complet": {
     title: "Full Body Optimisé & Complet", 
-    description: "Ta sélection améliorée avec tous les groupes musculaires", 
+    description: "Programme complet avec tous les groupes musculaires - ordre optimal", 
     sessions: [
         { day: "Full Body Complet", muscle: "Corps Complet", exercises: [
-            { name: "Curl haltères incliné", sets: "3×8 rep" },
-            { name: "avant bras debout", sets: "3×8 rep" },
-            { name: "Extension corde haute", sets: "3×8 rep" },
-            { name: "Développé incliné haltères", sets: "3×8 rep" },
-            { name: "Écarté poulie", sets: "3×8 rep" },
-            { name: "Élévations latérales", sets: "3×10 rep" },
+            // 1. JAMBES (exercices les plus énergivores en premier)
+            { name: "Squat", sets: "4×8 rep" },
+            { name: "Soulevé de terre", sets: "4×6 rep" },
             { name: "Presse à cuisses", sets: "3×8 rep" },
             { name: "Leg extension", sets: "3×10 rep" },
             { name: "leg-curl-allonge", sets: "3×10 rep" },
-            { name: "Squat", sets: "4×8 rep" },
-            { name: "Tirage horizontal", sets: "3×8 rep" },
+            
+            // 2. DOS (gros groupes musculaires)
             { name: "Tirage vertical", sets: "3×8 rep" },
-            { name: "Soulevé de terre", sets: "4×6 rep" },
+            { name: "Tirage horizontal", sets: "3×8 rep" },
+            
+            // 3. PECTORAUX
             { name: "Développé couché", sets: "4×8 rep" },
-            { name: "Planche", sets: "2 min" }
+            { name: "Développé incliné haltères", sets: "3×8 rep" },
+            { name: "Écarté poulie", sets: "3×10 rep" },
+            
+            // 4. ÉPAULES
+            { name: "Élévations latérales", sets: "3×10 rep" },
+            
+            // 5. BRAS (petits groupes en fin)
+            { name: "Curl haltères incliné", sets: "3×8 rep" },
+            { name: "Extension corde haute", sets: "3×8 rep" },
+            { name: "avant bras debout", sets: "3×10 rep" },
+            
+            // 6. ABDOS
+            { name: "Planche", sets: "3×45s" }
         ]}
     ]
 },
 
-    "2days": { 
-        title: "Programme 2 Jours - Full Body", 
-        description: "Deux séances complètes pour travailler tout le corps", 
-        sessions: [
-            { day: "Jour 1 - Full Body A", muscle: "Corps Complet", exercises: [
-                { name: "Développé couché", sets: "4×8 rep" }, 
-                { name: "Squat", sets: "4×8 rep" }, 
-                { name: "Tirage horizontal", sets: "4×8 rep" }, 
-                { name: "Écarté poulie", sets: "3×10 rep" },
-                { name: "Curl marteau", sets: "3×10 rep" },
-                { name: "avant bras assis", sets: "3×10 rep" }, 
-                { name: "Extension corde haute", sets: "3×10 rep" }, 
-                { name: "extension lombaires", sets: "3×10 rep" },
-                { name: "Planche", sets: "2 min" }
-            ]},
-            { day: "Jour 2 - Full Body B", muscle: "Corps Complet", exercises: [
-                { name: "Soulevé de terre", sets: "4×6 rep" }, 
-                { name: "Développé incliné haltères", sets: "4×8 rep" },
-                { name: "Tirage vertical", sets: "4×8 rep" }, 
-                { name: "Élévations frontales", sets: "3×10 rep" }, 
-                { name: "Curl haltères incliné", sets: "3×10 rep" },
-                { name: "avant bras debout", sets: "3×10 rep" },
-                { name: "extension lombaires", sets: "3×10 rep" },
-                { name: "Pompes", sets: "3×max" }, 
-                { name: "Planche", sets: "2 min" }
-            ]}
-        ]
-    },
-    "3days": { 
-        title: "Programme 3 Jours - Push Pull Legs", 
-        description: "Split classique pour une progression optimale", 
-        sessions: [
-            { day: "Jour 1 - Push", muscle: "Poussée", exercises: [
-                { name: "Développé couché", sets: "4×8 rep" }, 
-                { name: "Développé incliné haltères", sets: "4×8 rep" }, 
-                { name: "Écarté poulie", sets: "3×10 rep" }, 
-                { name: "Curl marteau", sets: "3×8 rep" },
-                { name: "Élévations latérales", sets: "3×10 rep" }, 
-                { name: "Extension corde haute", sets: "3×8 rep" }, 
-                { name: "Tirage horizontal", sets: "3×8 rep" }
-            ]},
-            { day: "Jour 2 - Legs", muscle: "Jambes", exercises: [
-                { name: "Squat", sets: "4×8 rep" }, 
-                { name: "Presse à cuisses", sets: "4×8 rep" }, 
-                { name: "Leg extension", sets: "3×8 rep" }, 
-                { name: "leg-curl-allonge", sets: "3×10 rep" },
-                { name: "Planche", sets: "2 min" }
-            ]},
-            { day: "Jour 3 - Pull", muscle: "Traction", exercises: [
-                { name: "Soulevé de terre", sets: "4×6 rep" }, 
-                { name: "Traction", sets: "3×8 rep" }, 
-                { name: "Tirage horizontal", sets: "4×8 rep" }, 
-                { name: "Tirage vertical", sets: "3×8 rep" }, 
-                { name: "Shrugs", sets: "3×10 rep" }, 
-                { name: "Curl marteau", sets: "4×8 rep" }, 
-                { name: "Extension corde haute", sets: "3×8 rep" }
-            ]}
+"2days": { 
+    title: "Programme 2 Jours - Full Body", 
+    description: "Deux séances équilibrées alternant les mouvements", 
+    sessions: [
+        { day: "Jour 1 - Full Body A", muscle: "Corps Complet", exercises: [
+            // Polyarticulaires majeurs
+            { name: "Squat", sets: "4×8 rep" }, 
+            { name: "Développé couché", sets: "4×8 rep" }, 
+            { name: "Tirage horizontal", sets: "4×8 rep" }, 
             
-        ]
-    },
-    "4days": { 
-        title: "Programme 4 Jours - Upper Lower", 
-        description: "Haute fréquence pour chaque groupe musculaire", 
-        sessions: [
-            { day: "Jour 1 - Upper A", muscle: "Haut du corps", exercises: [
-                { name: "Développé couché", sets: "4×8 rep" }, 
-                { name: "Tirage horizontal", sets: "4×8 rep" }, 
-                { name: "Développé incliné haltères", sets: "3×8 rep" },
-                { name: "Tirage vertical", sets: "3×8 rep" }, 
-                { name: "Écarté poulie", sets: "3×8 rep" }, 
-                { name: "Curl marteau", sets: "3×8 rep" }, 
-                { name: "Extension corde haute", sets: "3×8 rep" }
-            ]},
-            { day: "Jour 2 - Lower A", muscle: "Bas du corps", exercises: [
-                { name: "Squat", sets: "4×8 rep" }, 
-                { name: "Soulevé de terre", sets: "4×6 rep" }, 
-                { name: "Presse à cuisses", sets: "4×8 rep" }, 
-                { name: "Leg extension", sets: "3×8 rep" }, 
-                { name: "leg-curl-allonge", sets: "3×10 rep" },
-                { name: "Planche", sets: "2 min" }
-            ]},
-            { day: "Jour 3 - Upper B", muscle: "Haut du corps", exercises: [
-                { name: "Écarté incliné", sets: "3×8 rep" }, 
-                { name: "Élévations latérales", sets: "3×8 rep" }, 
-                { name: "Tirage vertical", sets: "3×8 rep" }, 
-                { name: "Écarté poulie", sets: "3×8 rep" }, 
-                { name: "avant bras assis", sets: "3×8 rep" },
-                { name: "Curl marteau", sets: "3×8 rep" }, 
-                { name: "Dips", sets: "3×8 rep" },
-                { name: "extension lombaires", sets: "3×10 rep"}
-            ]},
-            { day: "Jour 4 - Lower B", muscle: "Bas du corps", exercises: [
-                { name: "Squat", sets: "4×8 rep" }, 
-                { name: "Soulevé de terre", sets: "4×6 rep" }, 
-                { name: "Presse à cuisses", sets: "4×8 rep" }, 
-                { name: "Leg extension", sets: "3×8 rep" }, 
-                { name: "leg-curl-allonge", sets: "3×10 rep" },
-                { name: "Planche", sets: "2 min" }
-            ]}
-        ]
-    },
-    "5days": { 
-        title: "Programme 5 Jours - Split Classique", 
-        description: "Volume maximal avec spécialisation par groupe musculaire", 
-        sessions: [
-            { day: "Jour 1 - Pectoraux", muscle: "Pectoraux", exercises: [
-                { name: "Développé couché", sets: "4×8 rep" }, 
-                { name: "Écarté incliné", sets: "4×8 rep" }, 
-                { name: "Développé incliné haltères", sets: "3×8 rep" }, 
-                { name: "Écarté poulie", sets: "3×8 rep" }, 
-                { name: "Pompes", sets: "3×max" }
-            ]},
-            { day: "Jour 2 - Dos", muscle: "Dos", exercises: [
-                { name: "Soulevé de terre", sets: "4×6 rep" }, 
-                { name: "Traction", sets: "4×max" }, 
-                { name: "Tirage vertical", sets: "4×8 rep" }, 
-                { name: "Rowing barre", sets: "3×8 rep" }, 
-                { name: "Tirage horizontal", sets: "3×8 rep" },
-                { name: "extension lombaires", sets: "3×10 rep" }
-            ]},
-            { day: "Jour 3 - Épaules", muscle: "Épaules", exercises: [
-                { name: "Développé militaire", sets: "4×8 rep" }, 
-                { name: "Élévations latérales", sets: "4×8 rep" }, 
-                { name: "Élévations frontales", sets: "3×8 rep" }, 
-                { name: "Shrugs", sets: "3×10 rep" }
-            ]},
-            { day: "Jour 4 - Jambes", muscle: "Jambes", exercises: [
-                { name: "Squat", sets: "4×6 rep" }, 
-                { name: "Presse à cuisses", sets: "4×8 rep" }, 
-                { name: "Leg extension", sets: "4×8 rep" },
-                { name: "leg-curl-allonge", sets: "3×10 rep" }
-            ]},
-            { day: "Jour 5 - Bras/Abdos", muscle: "Bras & Abdos", exercises: [
-                { name: "Curl pupitre machine ", sets: "4×8 rep" }, 
-                { name: "Barre au front", sets: "4×8 rep" }, 
-                { name: "Curl haltères incliné", sets: "3×8 rep" }, 
-                { name: "avant bras assis", sets: "3×8 rep" },
-                { name: "Extension corde haute", sets: "3×8 rep" },
-                { name: "Dips", sets: "3×8 rep" }, 
-                { name: "Planche", sets: "2 min" }
-            ]}
-        ]
-    }
+            // Secondaires
+            { name: "Presse à cuisses", sets: "3×10 rep" },
+            { name: "Écarté poulie", sets: "3×10 rep" },
+            { name: "Élévations latérales", sets: "3×12 rep" },
+            
+            // Bras & finition
+            { name: "Curl marteau", sets: "3×10 rep" },
+            { name: "Extension corde haute", sets: "3×10 rep" }, 
+            { name: "Planche", sets: "3×45s" }
+        ]},
+        { day: "Jour 2 - Full Body B", muscle: "Corps Complet", exercises: [
+            // Polyarticulaires majeurs (variantes)
+            { name: "Soulevé de terre", sets: "4×6 rep" }, 
+            { name: "Développé incliné haltères", sets: "4×8 rep" },
+            { name: "Tirage vertical", sets: "4×8 rep" }, 
+            
+            // Secondaires
+            { name: "Leg extension", sets: "3×10 rep" },
+            { name: "leg-curl-allonge", sets: "3×10 rep" },
+            { name: "Élévations frontales", sets: "3×12 rep" }, 
+            
+            // Bras & finition
+            { name: "Curl haltères incliné", sets: "3×10 rep" },
+            { name: "Dips", sets: "3×8-12 rep" }, 
+            { name: "extension lombaires", sets: "3×12 rep" },
+            { name: "crunch", sets: "3×15 rep" }
+        ]}
+    ]
+},
+
+"3days": { 
+    title: "Programme 3 Jours - Push Pull Legs", 
+    description: "Split classique optimisé pour progression maximale", 
+    sessions: [
+        { day: "Jour 1 - Push (Poussée)", muscle: "Pectoraux, Épaules, Triceps", exercises: [
+            // Pectoraux
+            { name: "Développé couché", sets: "4×8 rep" }, 
+            { name: "Développé incliné haltères", sets: "4×8 rep" }, 
+            { name: "Écarté poulie", sets: "3×12 rep" }, 
+            
+            // Épaules
+            { name: "Développé militaire", sets: "4×8 rep" },
+            { name: "Élévations latérales", sets: "3×12 rep" }, 
+            
+            // Triceps
+            { name: "Extension corde haute", sets: "3×10 rep" }, 
+            { name: "Dips", sets: "3×8-12 rep" }
+        ]},
+        
+        { day: "Jour 2 - Pull (Traction)", muscle: "Dos, Biceps, Arrière épaules", exercises: [
+            // Dos
+            { name: "Soulevé de terre", sets: "4×6 rep" }, 
+            { name: "Traction", sets: "4×6-10 rep" }, 
+            { name: "Tirage horizontal", sets: "4×8 rep" }, 
+            { name: "Tirage vertical", sets: "3×10 rep" }, 
+            
+            // Trapèzes
+            { name: "Shrugs", sets: "3×12 rep" }, 
+            
+            // Biceps
+            { name: "Curl marteau", sets: "4×10 rep" }, 
+            { name: "Curl haltères incliné", sets: "3×10 rep" },
+            { name: "avant bras debout", sets: "3×12 rep" }
+        ]},
+        
+        { day: "Jour 3 - Legs (Jambes)", muscle: "Jambes & Abdos", exercises: [
+            // Quadriceps & Global
+            { name: "Squat", sets: "4×8 rep" }, 
+            { name: "Presse à cuisses", sets: "4×10 rep" }, 
+            { name: "Leg extension", sets: "3×12 rep" }, 
+            
+            // Ischio-jambiers
+            { name: "leg-curl-allonge", sets: "4×10 rep" },
+            { name: "Soulevé de terre", sets: "3×8 rep" },
+            
+            // Gainage & Lombaires
+            { name: "extension lombaires", sets: "3×12 rep" },
+            { name: "Planche", sets: "3×60s" },
+            { name: "crunch", sets: "3×15 rep" }
+        ]}
+    ]
+},
+
+"4days": { 
+    title: "Programme 4 Jours - Upper Lower", 
+    description: "Haute fréquence optimisée avec variété d'exercices", 
+    sessions: [
+        { day: "Jour 1 - Upper A (Force)", muscle: "Haut du corps", exercises: [
+            // Polyarticulaires lourds
+            { name: "Développé couché", sets: "4×6 rep" }, 
+            { name: "Tirage horizontal", sets: "4×6 rep" }, 
+            
+            // Volume secondaire
+            { name: "Développé incliné haltères", sets: "3×8 rep" },
+            { name: "Tirage vertical", sets: "3×8 rep" }, 
+            
+            // Épaules & Bras
+            { name: "Élévations latérales", sets: "3×12 rep" },
+            { name: "Curl marteau", sets: "3×10 rep" }, 
+            { name: "Extension corde haute", sets: "3×10 rep" }
+        ]},
+        
+        { day: "Jour 2 - Lower A (Force)", muscle: "Bas du corps", exercises: [
+            // Exercices principaux
+            { name: "Squat", sets: "5×5 rep" }, 
+            { name: "Soulevé de terre", sets: "4×5 rep" }, 
+            
+            // Auxiliaires
+            { name: "Leg extension", sets: "3×10 rep" }, 
+            { name: "leg-curl-allonge", sets: "3×10 rep" },
+            
+            // Gainage
+            { name: "extension lombaires", sets: "3×12 rep" },
+            { name: "Planche", sets: "3×45s" }
+        ]},
+        
+        { day: "Jour 3 - Upper B (Hypertrophie)", muscle: "Haut du corps", exercises: [
+            // Pectoraux
+            { name: "Écarté incliné", sets: "4×10 rep" }, 
+            { name: "Écarté poulie", sets: "3×12 rep" }, 
+            { name: "Pompes", sets: "3×max" },
+            
+            // Dos
+            { name: "Traction", sets: "4×max" },
+            { name: "Tirage vertical", sets: "3×10 rep" }, 
+            
+            // Épaules & Bras
+            { name: "Élévations frontales", sets: "3×12 rep" },
+            { name: "Curl haltères incliné", sets: "3×10 rep" }, 
+            { name: "Dips", sets: "3×10 rep" }
+        ]},
+        
+        { day: "Jour 4 - Lower B (Hypertrophie)", muscle: "Bas du corps", exercises: [
+            // Volume jambes
+            { name: "Presse à cuisses", sets: "4×10 rep" }, 
+            { name: "Squat", sets: "3×10 rep" }, 
+            { name: "Leg extension", sets: "4×12 rep" }, 
+            { name: "leg-curl-allonge", sets: "4×12 rep" },
+            
+            // Accessoires
+            { name: "Fentes avant", sets: "3×10/jambe" },
+            
+            // Core
+            { name: "Planche", sets: "3×60s" },
+            { name: "crunch", sets: "3×15 rep" }
+        ]}
+    ]
+},
+
+"5days": { 
+    title: "Programme 5 Jours - Split Classique", 
+    description: "Volume maximal avec spécialisation optimisée", 
+    sessions: [
+        { day: "Jour 1 - Pectoraux/Triceps", muscle: "Pectoraux & Triceps", exercises: [
+            // Pectoraux
+            { name: "Développé couché", sets: "4×8 rep" }, 
+            { name: "Développé incliné haltères", sets: "4×8 rep" }, 
+            { name: "Écarté incliné", sets: "3×10 rep" }, 
+            { name: "Écarté poulie", sets: "3×12 rep" }, 
+            
+            // Triceps
+            { name: "Dips", sets: "4×8-12 rep" },
+            { name: "Extension corde haute", sets: "3×10 rep" },
+            { name: "Barre au front", sets: "3×10 rep" }
+        ]},
+        
+        { day: "Jour 2 - Dos/Biceps", muscle: "Dos & Biceps", exercises: [
+            // Dos
+            { name: "Soulevé de terre", sets: "4×6 rep" }, 
+            { name: "Traction", sets: "4×max" }, 
+            { name: "Rowing barre", sets: "4×8 rep" }, 
+            { name: "Tirage horizontal", sets: "3×10 rep" },
+            { name: "Tirage vertical", sets: "3×10 rep" }, 
+            
+            // Biceps
+            { name: "Curl pupitre machine ", sets: "4×10 rep" }, 
+            { name: "Curl marteau", sets: "3×10 rep" },
+            { name: "avant bras assis", sets: "3×12 rep" }
+        ]},
+        
+        { day: "Jour 3 - Épaules/Trapèzes", muscle: "Épaules & Trapèzes", exercises: [
+            { name: "Développé militaire", sets: "4×8 rep" }, 
+            { name: "developpe-epaules-assis", sets: "3×10 rep" },
+            { name: "Élévations latérales", sets: "4×12 rep" }, 
+            { name: "Élévations frontales", sets: "3×12 rep" }, 
+            { name: "Shrugs", sets: "4×12 rep" },
+            
+            // Abdos
+            { name: "crunch", sets: "3×15 rep" },
+            { name: "Planche", sets: "3×60s" }
+        ]},
+        
+        { day: "Jour 4 - Jambes (Quadriceps)", muscle: "Jambes focus Quadriceps", exercises: [
+            { name: "Squat", sets: "5×6 rep" }, 
+            { name: "Presse à cuisses", sets: "4×10 rep" }, 
+            { name: "Leg extension", sets: "4×12 rep" },
+            { name: "Fentes avant", sets: "3×10/jambe" },
+            { name: "leg-curl-allonge", sets: "3×10 rep" },
+            
+            // Lombaires
+            { name: "extension lombaires", sets: "3×12 rep" }
+        ]},
+        
+        { day: "Jour 5 - Jambes (Ischio) & Abdos", muscle: "Ischio-jambiers & Core", exercises: [
+            // Focus Ischio
+            { name: "Soulevé de terre", sets: "4×8 rep" },
+            { name: "leg-curl-allonge", sets: "4×10 rep" },
+            { name: "Squat", sets: "3×10 rep" },
+            { name: "Presse à cuisses", sets: "3×12 rep" },
+            
+            // Abdos complet
+            { name: "Relevé de genoux suspendu", sets: "3×12 rep" },
+            { name: "crunch", sets: "3×15 rep" },
+            { name: "mountain-climber", sets: "3×20 rep" },
+            { name: "Planche", sets: "3×60s" }
+        ]}
+    ]
+}
 };
 
 // ==========================================
@@ -295,7 +392,7 @@ const muscleWorkouts = {
         ]
     },
     "4days": { 
-        title: "Séance Dos", 
+        title: "Séance Dos / abdos", 
         sessions: [
             { day: "Dos Complet", muscle: "Dos", exercises: [
                 { name: "Soulevé de terre", sets: "4×6 rep" }, 
