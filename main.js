@@ -240,7 +240,7 @@ const programs = {
                 { name: "Curl pupitre machine ", sets: "4×8 rep" }, 
                 { name: "Barre au front", sets: "4×8 rep" }, 
                 { name: "Curl haltères incliné", sets: "3×8 rep" }, 
-                { name: "avants bras assis", sets: "3×8 rep" },
+                { name: "avant bras assis", sets: "3×8 rep" },
                 { name: "Extension corde haute", sets: "3×8 rep" },
                 { name: "Dips", sets: "3×8 rep" }, 
                 { name: "Planche", sets: "2 min" }
@@ -270,8 +270,8 @@ const muscleWorkouts = {
                 { name: "Dips", sets: "3×8 rep" }
             ]},
             { day: "Avant-bras", muscle: "Avant-bras", exercises: [
-                { name: "avants bras assis", sets: "4×10 rep" },
-                { name: "avants bras debout", sets: "4×10 rep" }
+                { name: "avant bras assis", sets: "4×10 rep" },
+                { name: "avant bras debout", sets: "4×10 rep" }
 
         ]}
         ]
