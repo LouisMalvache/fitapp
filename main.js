@@ -392,7 +392,7 @@ const muscleWorkouts = {
         ]
     },
     "4days": { 
-        title: "Séance Dos / abdos", 
+        title: "Séance Dos", 
         sessions: [
             { day: "Dos Complet", muscle: "Dos", exercises: [
                 { name: "Soulevé de terre", sets: "4×6 rep" }, 
